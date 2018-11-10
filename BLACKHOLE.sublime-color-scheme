@@ -7,7 +7,8 @@
     "string": "#D6BD0A",
     "entity": "#7294AF",
     "punctuation": "color(var(highlighted) alpha(0.7))",
-    "func": "#7297BF",
+    "function": "#7297BF",
+    "function-call": "#E9543F",
     "diff_add": "#8FC440",
     "diff_del": "#C44040",
     "diff_mod": "#C4A340"
@@ -111,7 +112,7 @@
     {
       "name": "Entity Function",
       "scope": "entity.name.function",
-      "foreground": "var(func)"
+      "foreground": "var(function)"
     },
     {
       "name": "Language variable",
@@ -128,7 +129,7 @@
     {
       "name": "Function call",
       "scope": "variable.function, variable.annotation, support.function, support.macro",
-      "foreground": "#E9543F",
+      "foreground": "var(function-call)",
       "font_style": "bold"
     },
     {
@@ -179,13 +180,13 @@
     {
       "name": "Markup Headings",
       "scope": "markup.heading",
-      "foreground": "var(func)",
+      "foreground": "var(function)",
       "font_style": "bold"
     },
     {
       "name": "Markup Headings",
       "scope": "markup.heading punctuation.definition.heading",
-      "foreground": "color(var(func) alpha(0.6))"
+      "foreground": "color(var(function) alpha(0.6))"
     },
     {
       "name": "Markup Links",
@@ -303,6 +304,55 @@
       "name": "YAML Entity",
       "scope": "string.unquoted.plain.out entity.name.tag",
       "foreground": "var(entity)"
+    },
+    {
+      "name": "RPM Spec Directive",
+      "scope": "support.directive.spec",
+      "foreground": "#CEB858",
+      "font_style": "bold"
+    },
+    {
+      "name": "RPM Spec Scriplet Options",
+      "scope": "keyword.other.options.spec",
+      "foreground": "",
+      "font_style": "italic"
+    },
+    {
+      "name": "RPM Spec Scriplet Target",
+      "scope": "keyword.other.target.spec",
+      "foreground": "var(entity)",
+      "font_style": "bold"
+    },
+    {
+      "name": "RPM Spec Bash Function",
+      "scope": "variable.function.spec",
+      "foreground": "",
+      "font_style": ""
+    },
+    {
+      "name": "RPM Spec Changelog Header",
+      "scope": "spec.changelog.header",
+      "font_style": "bold"
+    },
+    {
+      "name": "RPM Spec Changelog Header Bullet",
+      "scope": "spec.changelog.header.bullet, spec.changelog.comment.bullet",
+      "foreground": "#888"
+    },
+    {
+      "name": "RPM Spec Changelog Author",
+      "scope": "spec.changelog.header.author, spec.changelog.header.mail",
+      "font_style": "italic"
+    },
+    {
+      "name": "RPM Spec Changelog Author Mail",
+      "scope": "spec.changelog.header.mail",
+      "foreground": "#888"
+    },
+    {
+      "name": "RPM Spec Changelog Comment",
+      "scope": "spec.changelog.comment",
+      "foreground": "#CCC"
     },
     {
       "scope": "entity.name.filename",

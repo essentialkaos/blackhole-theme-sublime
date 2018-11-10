@@ -1,0 +1,137 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: RPM Spec
+file_extensions:
+  - spec
+  - .rpmmacros
+first_line_match: "-[*]-( Mode:)? RPM Spec -[*]-"
+scope: source.spec
+
+contexts:
+  main:
+    - include: comments
+    - include: string
+    - include: macro
+    - include: definition
+    - include: bash-variable
+    - include: keyword
+    - include: scriplet
+    - include: function
+    - include: directive
+    - include: changelog
+
+  macro:
+    - match: (\%\{)([a-zA-Z_0-9 ?:!_-]{1,})(\})
+      captures: 
+        0: variable.other.spec
+        1: variable.other.name.spec
+
+  string:
+    - match: '"'
+      scope: punctuation.definition.string.begin.spec
+      push:
+        - meta_scope: string.quoted.double.spec
+        - match: '"'
+          scope: punctuation.definition.string.end.spec
+          pop: true
+        - include: string-placeholder
+        - include: string-escaped-char
+    - match: "'"
+      scope: punctuation.definition.string.begin.spec
+      push:
+        - meta_scope: string.quoted.single.spec
+        - match: "'"
+          scope: punctuation.definition.string.end.spec
+          pop: true
+        - include: string-placeholder
+        - include: string-escaped-char
+
+  bash-variable:
+    - match: \$([a-zA-Z_0-9])*\b
+      scope: variable.other.bash
+
+  keyword:
+    - match: \%(ifarch|then|fi|endif|elif|else|if)\b
+      scope: keyword.control.conditional.spec
+    - match: '\b([0-9]+\.[0-9]*|\.[0-9]+)([eE][+-]?\d+)?\b'
+      scope: constant.numeric.float.decimal.spec
+    - match: '\b\d+\b'
+      scope: constant.numeric.integer.decimal.spec
+    - match: '^[ \t]{0,}(cat|chmod|chown|cmake|cp|echo|exit|export|find|git|getent|groupadd|install|make|mkdir|ln|mv|patch|popd|pushd|rm|sed|service|svn|systemctl|touch|useradd)'
+      scope: variable.function.spec
+    - match: \b(if|else|fi||elif|then|while|do|done)\b
+      scope: keyword.other
+    - match: (&1>|&2>|&>|&>>|1>|2>)
+      scope: keyword.operator
+
+  scriplet:
+    - match: '\%(package|description|prep|setup|build|install|files|clean|pretrans|posttrans|preun|postun|changelog|post|pre|check|triggerun|triggerin|triggerpostun|verifyscript) ?(-[a-z]{1,4})? ?([a-zA-Z_\-0-9\.]*)?'
+      captures: 
+        0: keyword.other.spec
+        1: keyword.other.name.spec
+        2: keyword.other.options.spec
+        3: keyword.other.target.spec
+
+  function:
+    - match: \%(defattr|attr|dir|config|ghost|doc|verify|exclude)\b
+      scope: support.function.spec
+
+  definition:
+    - match: '(\%define|\%global) +([\d\w\S]+)'
+      captures:
+        0: spec.definition
+        1: support.function.spec
+        2: entity.name.type
+
+  directive:
+    - match: '^(Summary|Name|Version|Release|Group|License|URL|Epoch|Source[0-9]{0,9}|Patch[0-9]{0,9}|Build(Root|Requires|Conflicts|PreReq)|Requires|Requires\(.*\)|Provides|Obsoletes|Conflicts|Vendor|BuildArch|ExclusiveArch|Auto(Req|ReqProv|Prov)|Recommends|Suggests|Packager):'
+      scope: support.directive.spec
+
+  changelog:
+    - match: (\*) +([a-zA-Z]{3} +[a-zA-Z]{3} +[0-9]{1,2} +[0-9]{4}) +([^<]+)([^ ]+)?(?>[ \-]+)(.*)
+      captures:
+        0: spec.changelog.header
+        1: spec.changelog.header.bullet
+        2: spec.changelog.header.date
+        3: spec.changelog.header.author
+        4: spec.changelog.header.mail
+        5: spec.changelog.header.version
+      set: changelog-comment
+
+  changelog-comment:
+    - match: '^([- ])?.*'
+      captures:
+        0: spec.changelog.comment
+        1: spec.changelog.comment.bullet
+    - match: '^ ?$'
+      pop: true
+
+  comments:
+    - match: (?=^\s*#)
+      push:
+        - match: \#
+          scope: punctuation.definition.comment.spec
+          set:
+            - meta_scope: comment.line.number-sign.spec
+            - include: pop-on-line-end
+    - match: \#
+      scope: punctuation.definition.comment.spec
+      push:
+        - meta_scope: comment.line.number-sign.spec
+        - include: pop-on-line-end
+
+  pop-on-line-end:
+    - match: $
+      pop: true
+
+  string-placeholder:
+    - match: |-
+        (?x)%
+            [#0\- +']*                                  # flags
+            (\[\d+\])?                                  # field (argument #)
+            [,;:_]?                                     # separator character (AltiVec)
+            ((-?\d+)|(\[\d+\])?\*)?                     # minimum field width
+            (\.((-?\d+)|(\[\d+\])?\*)?)?                # precision
+            [diouxXDOUeEfFgGaAcCsSpqnvtTbyYhHmMzZ%]     # conversion type
+      scope: constant.other.placeholder.spec
