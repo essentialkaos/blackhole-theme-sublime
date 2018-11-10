@@ -1,4 +1,4 @@
-## `BLACKHOLE` Theme for Sublime Text 3
+## BLACKH⚫LE Theme for Sublime Text 3
 
 <p align="center"><a href="#readme"><img src="https://gh.kaos.st/blackhole.jpg"/></a></p>
 
