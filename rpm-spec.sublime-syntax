@@ -23,7 +23,7 @@ contexts:
 
   macro:
     - match: (\%\{)([a-zA-Z_0-9 ?:!_-]{1,})(\})
-      captures: 
+      captures:
         0: variable.other.spec
         1: variable.other.name.spec
 
@@ -67,7 +67,7 @@ contexts:
 
   scriplet:
     - match: '\%(package|description|prep|setup|build|install|files|clean|pretrans|posttrans|preun|postun|changelog|post|pre|check|triggerun|triggerin|triggerpostun|verifyscript) ?(-[a-z]{1,4})? ?([a-zA-Z_\-0-9\.]*)?'
-      captures: 
+      captures:
         0: keyword.other.spec
         1: keyword.other.name.spec
         2: keyword.other.options.spec
