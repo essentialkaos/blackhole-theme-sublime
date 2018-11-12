@@ -11,23 +11,23 @@ scope: source.spec
 contexts:
   main:
     - include: comments
-    - include: string
-    - include: macro
-    - include: definition
-    - include: bash-variable
-    - include: keyword
-    - include: scriplet
-    - include: function
-    - include: directive
-    - include: changelog
+    - include: strings
+    - include: macroses
+    - include: definitions
+    - include: bash-variables
+    - include: keywords
+    - include: scriptlets
+    - include: functions
+    - include: directives
+    - include: changelogs
 
-  macro:
+  macroses:
     - match: (\%\{)([a-zA-Z_0-9 ?:!_-]{1,})(\})
       captures:
         0: variable.other.spec
         1: variable.other.name.spec
 
-  string:
+  strings:
     - match: '"'
       scope: punctuation.definition.string.begin.spec
       push:
@@ -47,11 +47,11 @@ contexts:
         - include: string-placeholder
         - include: string-escaped-char
 
-  bash-variable:
+  bash-variables:
     - match: \$([a-zA-Z_0-9])*\b
       scope: variable.other.bash
 
-  keyword:
+  keywords:
     - match: \%(ifarch|then|fi|endif|elif|else|if)\b
       scope: keyword.control.conditional.spec
     - match: '\b([0-9]+\.[0-9]*|\.[0-9]+)([eE][+-]?\d+)?\b'
@@ -65,7 +65,7 @@ contexts:
     - match: (&1>|&2>|&>|&>>|1>|2>)
       scope: keyword.operator
 
-  scriplet:
+  scriptlets:
     - match: '\%(package|description|prep|setup|build|install|files|clean|pretrans|posttrans|preun|postun|changelog|post|pre|check|triggerun|triggerin|triggerpostun|verifyscript) ?(-[a-z]{1,4})? ?([a-zA-Z_\-0-9\.]*)?'
       captures:
         0: keyword.other.spec
@@ -73,22 +73,22 @@ contexts:
         2: keyword.other.options.spec
         3: keyword.other.target.spec
 
-  function:
+  functions:
     - match: \%(defattr|attr|dir|config|ghost|doc|verify|exclude)\b
       scope: support.function.spec
 
-  definition:
+  definitions:
     - match: '(\%define|\%global) +([\d\w\S]+)'
       captures:
         0: spec.definition
         1: support.function.spec
         2: entity.name.type
 
-  directive:
+  directives:
     - match: '^(Summary|Name|Version|Release|Group|License|URL|Epoch|Source[0-9]{0,9}|Patch[0-9]{0,9}|Build(Root|Requires|Conflicts|PreReq)|Requires|Requires\(.*\)|Provides|Obsoletes|Conflicts|Vendor|BuildArch|ExclusiveArch|Auto(Req|ReqProv|Prov)|Recommends|Suggests|Packager):'
       scope: support.directive.spec
 
-  changelog:
+  changelogs:
     - match: (\*) +([a-zA-Z]{3} +[a-zA-Z]{3} +[0-9]{1,2} +[0-9]{4}) +([^<]+)([^ ]+)?(?>[ \-]+)(.*)
       captures:
         0: spec.changelog.header
@@ -97,9 +97,9 @@ contexts:
         3: spec.changelog.header.author
         4: spec.changelog.header.mail
         5: spec.changelog.header.version
-      set: changelog-comment
+      set: changelog-comments
 
-  changelog-comment:
+  changelog-comments:
     - match: '^([- ])?.*'
       captures:
         0: spec.changelog.comment
