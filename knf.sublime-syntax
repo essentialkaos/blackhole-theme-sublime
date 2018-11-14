@@ -4,6 +4,7 @@
 name: KNF
 file_extensions:
   - knf
+first_line_match: "-[*]-( Mode:)? KNF -[*]-"
 scope: source.knf
 
 contexts:
