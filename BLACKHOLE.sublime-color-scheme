@@ -9,6 +9,7 @@
     "punctuation": "color(var(highlighted) alpha(0.7))",
     "function": "#7297BF",
     "function-call": "#E9543F",
+    "directive": "#CEB858",
     "diff_add": "#8FC440",
     "diff_del": "#C44040",
     "diff_mod": "#C4A340"
@@ -308,7 +309,7 @@
     {
       "name": "RPM Spec Directive",
       "scope": "support.directive.spec",
-      "foreground": "#CEB858",
+      "foreground": "var(directive)",
       "font_style": "bold"
     },
     {
@@ -353,6 +354,17 @@
       "name": "RPM Spec Changelog Comment",
       "scope": "spec.changelog.comment",
       "foreground": "#CCC"
+    },
+    {
+      "name": "KNF Section",
+      "scope": "variable.section.knf",
+      "foreground": "var(directive)",
+      "font_style": "bold"
+    },
+    {
+      "name": "KNF Property",
+      "scope": "variable.property.knf",
+      "foreground": "var(entity)"
     },
     {
       "scope": "entity.name.filename",

@@ -1,0 +1,81 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: KNF
+file_extensions:
+  - knf
+scope: source.knf
+
+contexts:
+  main:
+    - include: keywords
+    - include: comments
+    - include: strings
+    - include: macroses
+    - include: sections
+    - include: properties
+
+  keywords:
+    - match: \b(true|false)\b
+      scope: keyword.other
+    - match: '\b([0-9]+\.[0-9]*|\.[0-9]+)([eE][+-]?\d+)?\b'
+      scope: constant.numeric.float.decimal.knf
+    - match: '\b\d+\b'
+      scope: constant.numeric.integer.decimal.knf
+
+  strings:
+    - match: '"'
+      scope: punctuation.definition.string.begin.knf
+      push:
+        - meta_scope: string.quoted.double.knf
+        - match: '"'
+          scope: punctuation.definition.string.end.knf
+          pop: true
+        - include: string-placeholder
+        - include: string-escaped-char
+    - match: "'"
+      scope: punctuation.definition.string.begin.knf
+      push:
+        - meta_scope: string.quoted.single.knf
+        - match: "'"
+          scope: punctuation.definition.string.end.knf
+          pop: true
+        - include: string-placeholder
+        - include: string-escaped-char
+
+  macroses:
+    - match: \{([A-Za-z0-9_-]{1,}):([A-Za-z0-9_-]{1,})\}
+      captures:
+        0: variable.other.knf
+        1: variable.other.section.knf
+        2: variable.other.name.knf
+
+  sections:
+    - match: ^\[(.*)\]$
+      captures:
+        0: variable.section.knf
+        1: variable.section.name.knf
+
+  properties:
+    - match: '^[ \t]{0,}[A-Za-z0-9_-]{1,}:'
+      captures: 
+        0: variable.property.knf
+        1: variable.property.name.knf
+
+  comments:
+    - match: (?=^\s*#)
+      push:
+        - match: \#
+          scope: punctuation.definition.comment.knf
+          set:
+            - meta_scope: comment.line.number-sign.knf
+            - include: pop-on-line-end
+    - match: \#
+      scope: punctuation.definition.comment.knf
+      push:
+        - meta_scope: comment.line.number-sign.knf
+        - include: pop-on-line-end
+
+  pop-on-line-end:
+    - match: $
+      pop: true
