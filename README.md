@@ -10,7 +10,7 @@
 
 1. Download the latest versions of `BLACKHOLE.sublime-color-scheme` and `*.sublime-syntax` files;
 2. Copy them into directory `Sublime Text 3/Packages/User/`;
-3. Go to Preferences → Color Scheme… and select BLACKHOLE.
+3. Go to _Preferences_ → _Color Scheme…_ and select BLACKHOLE.
 
 ### License
 

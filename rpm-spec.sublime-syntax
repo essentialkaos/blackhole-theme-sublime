@@ -35,6 +35,9 @@ contexts:
         - match: '"'
           scope: punctuation.definition.string.end.spec
           pop: true
+        - match: $
+          scope: punctuation.definition.string.end.spec
+          pop: true
         - include: string-placeholder
         - include: string-escaped-char
     - match: "'"
@@ -42,6 +45,9 @@ contexts:
       push:
         - meta_scope: string.quoted.single.spec
         - match: "'"
+          scope: punctuation.definition.string.end.spec
+          pop: true
+        - match: $
           scope: punctuation.definition.string.end.spec
           pop: true
         - include: string-placeholder
@@ -60,10 +66,14 @@ contexts:
       scope: constant.numeric.integer.decimal.spec
     - match: '^[ \t]{0,}(cat|chmod|chown|cmake|cp|echo|exit|export|find|git|getent|groupadd|install|make|mkdir|ln|mv|patch|popd|pushd|rm|sed|service|svn|systemctl|touch|useradd)'
       scope: variable.function.spec
-    - match: \b(if|else|fi||elif|then|while|do|done)\b
-      scope: keyword.other
     - match: (&1>|&2>|&>|&>>|1>|2>)
       scope: keyword.operator
+    - match: \b(?>[\t ]*)(if|else|fi|elif|while|done)\b
+      captures:
+        1: keyword.other
+    - match: (?>\;) *(do|then)
+      captures:
+        1: keyword.other
 
   scriptlets:
     - match: '\%(package|description|prep|setup|build|install|files|clean|pretrans|posttrans|preun|postun|changelog|post|pre|check|triggerun|triggerin|triggerpostun|verifyscript) ?(-[a-z]{1,4})? ?([a-zA-Z_\-0-9\.]*)?'
