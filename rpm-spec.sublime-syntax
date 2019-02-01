@@ -39,7 +39,6 @@ contexts:
           scope: punctuation.definition.string.end.spec
           pop: true
         - include: string-placeholder
-        - include: string-escaped-char
     - match: "'"
       scope: punctuation.definition.string.begin.spec
       push:
@@ -51,7 +50,6 @@ contexts:
           scope: punctuation.definition.string.end.spec
           pop: true
         - include: string-placeholder
-        - include: string-escaped-char
 
   bash-variables:
     - match: \$([a-zA-Z_0-9])*\b

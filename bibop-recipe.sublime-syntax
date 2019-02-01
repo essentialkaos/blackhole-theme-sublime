@@ -1,0 +1,92 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: Bibop Recipe
+file_extensions:
+  - recipe
+scope: source.bibop
+
+contexts:
+  main:
+    - include: comments
+    - include: strings
+    - include: keywords
+    - include: variables
+
+  comments:
+    - match: (?=^\s*#)
+      push:
+        - match: \#
+          scope: punctuation.definition.comment.bibop
+          set:
+            - meta_scope: comment.line.number-sign.bibop
+            - include: pop-on-line-end
+    - match: \#
+      scope: punctuation.definition.comment.bibop
+      push:
+        - meta_scope: comment.line.number-sign.bibop
+        - include: pop-on-line-end
+
+  pop-on-line-end:
+    - match: $
+      pop: true
+
+  strings:
+    - match: '"'
+      scope: punctuation.definition.string.begin.bibop
+      push:
+        - meta_scope: string.quoted.double.bibop
+        - match: '"'
+          scope: punctuation.definition.string.end.bibop
+          pop: true
+        - match: $
+          scope: punctuation.definition.string.end.bibop
+          pop: true
+        - include: string-placeholder
+        - include: string-escaped-char
+    - match: "'"
+      scope: punctuation.definition.string.begin.bibop
+      push:
+        - meta_scope: string.quoted.single.bibop
+        - match: "'"
+          scope: punctuation.definition.string.end.bibop
+          pop: true
+        - match: $
+          scope: punctuation.definition.string.end.bibop
+          pop: true
+        - include: string-placeholder
+        - include: string-escaped-char
+  
+  string-placeholder:
+    - match: |-
+        (?x)%
+            [#0\- +']*                                  # flags
+            (\[\d+\])?                                  # field (argument #)
+            [,;:_]?                                     # separator character (AltiVec)
+            ((-?\d+)|(\[\d+\])?\*)?                     # minimum field width
+            (\.((-?\d+)|(\[\d+\])?\*)?)?                # precision
+            [diouxXDOUeEfFgGaAcCsSpqnvtTbyYhHmMzZ%]     # conversion type
+      scope: constant.other.placeholder.bibop
+
+  keywords:
+    - match: '^(dir|require-root|unsafe-actions)'
+      scope: keyword.other
+    - match: '^action'
+      scope: support.function
+    - match: '\b(true|false|yes|no)\b'
+      scope: constant.language
+    - match: '\b([0-9]+\.[0-9]*|\.[0-9]+)([eE][+-]?\d+)?\b'
+      scope: constant.numeric.float.decimal.bibop
+    - match: '\b\d+\b'
+      scope: constant.numeric.integer.decimal.bibop
+
+  variables:
+    - match: '^(var) +([\d\w\S]+)'
+      captures:
+        0: spec.definition
+        1: storage.type
+        2: entity.name.type
+    - match: '\{([a-zA-Z0-9_-]{1,})\}'
+      captures:
+        0: variable.other.bibop
+        1: variable.other.name.bibop
