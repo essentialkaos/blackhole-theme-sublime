@@ -56,7 +56,7 @@ contexts:
           pop: true
         - include: string-placeholder
         - include: string-escaped-char
-  
+
   string-placeholder:
     - match: |-
         (?x)%
