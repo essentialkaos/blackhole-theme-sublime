@@ -42,8 +42,7 @@ contexts:
         - match: $
           scope: punctuation.definition.string.end.bibop
           pop: true
-        - include: string-placeholder
-        - include: string-escaped-char
+        - include: variables
     - match: "'"
       scope: punctuation.definition.string.begin.bibop
       push:
@@ -54,22 +53,9 @@ contexts:
         - match: $
           scope: punctuation.definition.string.end.bibop
           pop: true
-        - include: string-placeholder
-        - include: string-escaped-char
-
-  string-placeholder:
-    - match: |-
-        (?x)%
-            [#0\- +']*                                  # flags
-            (\[\d+\])?                                  # field (argument #)
-            [,;:_]?                                     # separator character (AltiVec)
-            ((-?\d+)|(\[\d+\])?\*)?                     # minimum field width
-            (\.((-?\d+)|(\[\d+\])?\*)?)?                # precision
-            [diouxXDOUeEfFgGaAcCsSpqnvtTbyYhHmMzZ%]     # conversion type
-      scope: constant.other.placeholder.bibop
 
   keywords:
-    - match: '^(dir|require-root|unsafe-actions)'
+    - match: '^(dir|require-root|unsafe-actions|fast-finish)'
       scope: keyword.other
     - match: '^action'
       scope: support.function
