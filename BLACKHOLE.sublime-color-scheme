@@ -134,6 +134,12 @@
       "font_style": "bold"
     },
     {
+      "name": "Function tag",
+      "scope": "meta.function.tag",
+      "foreground": "var(function-call)",
+      "font_style": ""
+    },
+    {
       "name": "Invalid",
       "scope": "invalid",
       "foreground": "#111111",
