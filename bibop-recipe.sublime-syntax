@@ -56,7 +56,7 @@ contexts:
           pop: true
 
   keywords:
-    - match: '^(dir|require-root|unsafe-actions|fast-finish|lock-workdir)'
+    - match: '^(dir|require-root|unsafe-actions|fast-finish|lock-workdir|pkg)'
       scope: keyword.other
     - match: '\b(true|false|yes|no)\b'
       scope: constant.language
