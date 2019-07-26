@@ -6,9 +6,9 @@
     { "trigger": "require-root\t— Requires root privileges for the recipe", "contents": "require-root ${1:yes}" },
     { "trigger": "fast-finish\t— If set to Yes, the test will be finished after the first failure", "contents": "fast-finish ${1:yes}" },
     { "trigger": "lock-workdir\t— Change current directory to working dir for every command", "contents": "lock-workdir ${1:no}" },
-    
+
     { "trigger": "command\t— Executes command", "contents": "command \"${1:command}\" \"${2:description}\"" },
-    
+
     { "trigger": "exit\t— Waits till command will be finished and then checks exit code", "contents": "exit ${1:code}" },
     { "trigger": "wait\t— Pauses before next action", "contents": "wait ${1:duration}" },
     { "trigger": "expect\t— Expects some substring in command output", "contents": "expect ${1:substr}" },
@@ -61,6 +61,8 @@
     { "trigger": "http-contains\t— Makes HTTP request and checks response data for some substring", "contents": "http-contains ${1:method} ${2:url} ${3:substr}" },
     { "trigger": "lib-loaded\t— Checks if the library is loaded to the dynamic linker", "contents": "lib-loaded ${1:glob}" },
     { "trigger": "lib-header\t— Checks if library header files are present on the system", "contents": "lib-header ${1:lib}" },
-    { "trigger": "lib-config\t— Checks if the library has a configuration file for pkg-config", "contents": "lib-config ${1:lib}" }
+    { "trigger": "lib-config\t— Checks if the library has a configuration file for pkg-config", "contents": "lib-config ${1:lib}" },
+    { "trigger": "lib-exist\t— Checks if library file is exist in libraries directory", "contents": "lib-exist ${1:filename}" },
+    { "trigger": "lib-linked\t— Checks if binary file has link with given library", "contents": "lib-linked ${1:binary} ${2:glob}" }
   ]
 }
