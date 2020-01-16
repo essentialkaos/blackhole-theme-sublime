@@ -11,14 +11,16 @@
 
     { "trigger": "exit\t— Waits till command will be finished and then checks exit code", "contents": "exit ${1:code}" },
     { "trigger": "wait\t— Pauses before next action", "contents": "wait ${1:duration}" },
+
     { "trigger": "expect\t— Expects some substring in command output", "contents": "expect ${1:substr}" },
     { "trigger": "print\t— Prints some data to stdin", "contents": "print ${1:data}" },
     { "trigger": "wait-output\t— Waits till command prints any data", "contents": "wait-output ${1:timeout}" },
     { "trigger": "output-match\t— Checks output with some Regexp", "contents": "output-match ${1:regexp}" },
     { "trigger": "output-contains\t— Checks if output contains some substring", "contents": "output-contains ${1:substr}" },
     { "trigger": "output-trim\t— Trim output (remove output data from store)", "contents": "output-trim" },
+
     { "trigger": "chdir\t— Changes current directory to given path", "contents": "chdir ${1:path}" },
-    { "trigger": "perms\t— Checks file or directory permissions", "contents": "perms ${1:path} ${2:mode}" },
+    { "trigger": "mode\t— Checks file or directory permissions", "contents": "mode ${1:path} ${2:mode}" },
     { "trigger": "owner\t— Checks file or directory owner", "contents": "owner ${1:path} ${2:user}:${3:group}" },
     { "trigger": "exist\t— Checks if file or directory exist", "contents": "exist ${1:path}" },
     { "trigger": "readable\t— Checks if file or directory is readable for some user", "contents": "readable ${1:username} ${2:path}" },
@@ -38,13 +40,16 @@
     { "trigger": "chmod\t— Changes file mode bits", "contents": "chmod ${1:target} ${2:mode}" },
     { "trigger": "backup\t— Creates backup for the file", "contents": "backup ${1:path}" },
     { "trigger": "backup-restore\t— Restore file from backup", "contents": "backup-restore ${1:path}" },
+
     { "trigger": "process-works\t— Checks if process is works", "contents": "process-works ${1:pid-file}" },
     { "trigger": "wait-pid\t— Waits for PID file", "contents": "wait-pid ${1:pid-file} ${2:timeout}" },
     { "trigger": "wait-fs\t— Waits for file/directory", "contents": "wait-fs ${1:target} ${2:timeout}" },
     { "trigger": "connect\t— Checks if it possible to connect to some address", "contents": "connect ${1:network} ${2:address}" },
     { "trigger": "app\t— Checks if application binary is present in PATH", "contents": "app ${1:name}" },
+    { "trigger": "signal\t— Sends signal to process", "contents": "signal ${1:sig}" },
     { "trigger": "env\t— Checks environment variable value", "contents": "env ${1:name} ${2:value}" },
     { "trigger": "env-set\t— Sets environment variable", "contents": "env-set ${1:name} ${2:value}" },
+
     { "trigger": "user-exist\t— Checks if user is exist on system", "contents": "user-exist ${1:username}" },
     { "trigger": "user-id\t— Checks if user has some ID (UID)", "contents": "user-id ${1:username} ${2:uid}" },
     { "trigger": "user-gid\t— Checks if user has some group ID (GID)", "contents": "user-gid ${1:username} ${2:gid}" },
@@ -53,16 +58,24 @@
     { "trigger": "user-home\t— Checks if user has some home directory", "contents": "user-home ${1:username} ${2:home-dir}" },
     { "trigger": "group-exist\t— Checks if group is exist on system", "contents": "group-exist ${1:groupname}" },
     { "trigger": "group-id\t— Checks if group has some ID (GID)", "contents": "group-id ${1:groupname} ${2:gid}" },
+
     { "trigger": "service-present\t— Checks if service is present on the system", "contents": "service-present ${1:service-name}" },
     { "trigger": "service-enabled\t— Checks if auto start is enabled for service", "contents": "service-enabled ${1:service-name}" },
     { "trigger": "service-works\t— Checks if service is works", "contents": "service-works ${1:service-name}" },
+
     { "trigger": "http-status\t— Makes HTTP request and checks status code", "contents": "http-status ${1:method} ${2:url} ${3:code}" },
-    { "trigger": "http-header\t— Makes HTTP request and checks response header value", "contents": "http-header ${1:method} ${2:url} ${3:code} ${4:header-name} ${5:header-value}" },
+    { "trigger": "http-header\t— Makes HTTP request and checks response header value", "contents": "http-header ${1:method} ${2:url} ${3:header-name} ${4:header-value}" },
     { "trigger": "http-contains\t— Makes HTTP request and checks response data for some substring", "contents": "http-contains ${1:method} ${2:url} ${3:substr}" },
+    { "trigger": "http-set-auth\t— Sets username and password for Basic Auth", "contents": "http-set-auth ${1:username} ${2:password}" },
+    { "trigger": "http-set-header\t— Sets request header", "contents": "http-set-header ${1:header-name} ${2:header-value}" },
+
     { "trigger": "lib-loaded\t— Checks if the library is loaded to the dynamic linker", "contents": "lib-loaded ${1:glob}" },
     { "trigger": "lib-header\t— Checks if library header files are present on the system", "contents": "lib-header ${1:lib}" },
     { "trigger": "lib-config\t— Checks if the library has a configuration file for pkg-config", "contents": "lib-config ${1:lib}" },
     { "trigger": "lib-exist\t— Checks if library file is exist in libraries directory", "contents": "lib-exist ${1:filename}" },
-    { "trigger": "lib-linked\t— Checks if binary file has link with given library", "contents": "lib-linked ${1:binary} ${2:glob}" }
+    { "trigger": "lib-linked\t— Checks if binary file has link with given library", "contents": "lib-linked ${1:binary} ${2:glob}" },
+
+    { "trigger": "python-module\t— Checks if a given Python module could be loaded", "contents": "python-module ${1:name}" },
+    { "trigger": "python3-module\t— Checks if a given Python 3 module could be loaded", "contents": "python3-module ${1:name}" }
   ]
 }
