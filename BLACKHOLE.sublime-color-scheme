@@ -377,6 +377,17 @@
       "foreground": "var(entity)"
     },
     {
+      "name": "Bibop Recipe Action",
+      "scope": "bibop.action",
+      "foreground": "#BBB"
+    },
+    {
+      "name": "Bibop Recipe Negative Action Sign",
+      "scope": "bibop.action.negative-sign",
+      "foreground": "#BA4C4C",
+      "font_style": "bold"
+    },
+    {
       "scope": "entity.name.filename",
       "foreground": "#DBC33F"
     },
