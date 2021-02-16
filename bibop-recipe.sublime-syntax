@@ -12,6 +12,7 @@ contexts:
     - include: strings
     - include: keywords
     - include: commands
+    - include: actions
     - include: variables
 
   comments:
@@ -56,7 +57,7 @@ contexts:
           pop: true
 
   keywords:
-    - match: '^(dir|require-root|unsafe-actions|fast-finish|lock-workdir|unbuffer|delay|pkg)'
+    - match: '^(dir|require-root|unsafe-actions|fast-finish|lock-workdir|unbuffer|delay|https-skip-verify|pkg)'
       scope: keyword.other
     - match: '\b(true|false|yes|no)\b'
       scope: constant.language
@@ -71,6 +72,14 @@ contexts:
         0: support.function
         1: meta.function
         2: meta.function.tag
+
+  actions:
+    - match: '^(  |\t)[a-z-]+'
+      scope: bibop.action
+    - match: '^(?:  |\t)(\!)([a-z-]+)'
+      captures:
+        1: bibop.action.negative-sign
+        2: bibop.action
 
   variables:
     - match: '^(var) +([\d\w\S]+)'
