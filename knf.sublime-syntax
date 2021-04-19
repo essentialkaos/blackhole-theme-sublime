@@ -23,6 +23,8 @@ contexts:
       scope: constant.numeric.float.decimal.knf
     - match: '\b\d+\b'
       scope: constant.numeric.integer.decimal.knf
+    - match: \#\b[a-fA-F0-9]{3,6}\b
+      scope: constant.numeric.hex.knf
 
   strings:
     - match: '"'
@@ -64,14 +66,7 @@ contexts:
         1: variable.property.name.knf
 
   comments:
-    - match: (?=^\s*#)
-      push:
-        - match: \#
-          scope: punctuation.definition.comment.knf
-          set:
-            - meta_scope: comment.line.number-sign.knf
-            - include: pop-on-line-end
-    - match: \#
+    - match: ^[\t ]*#
       scope: punctuation.definition.comment.knf
       push:
         - meta_scope: comment.line.number-sign.knf
