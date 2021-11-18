@@ -43,6 +43,7 @@
     { "trigger": "remove\t— Removes file or directory", "contents": "remove ${1:path}" },
     { "trigger": "chmod\t— Changes file mode bits", "contents": "chmod ${1:target} ${2:mode}" },
     { "trigger": "truncate\t— Changes the size of the file to zero", "contents": "truncate ${1:target}" },
+    { "trigger": "cleanup\t— Removes all directories and files in the given directory", "contents": "cleanup ${1:dir}" },
     { "trigger": "backup\t— Creates backup for the file", "contents": "backup ${1:path}" },
     { "trigger": "backup-restore\t— Restore file from backup", "contents": "backup-restore ${1:path}" },
 

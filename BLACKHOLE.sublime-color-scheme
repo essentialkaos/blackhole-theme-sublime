@@ -20,9 +20,9 @@
     "background": "#141414",
     "caret": "#4DBAE2",
     "gutter": "#111111",
-    "gutter_foreground": "#555555",
+    "gutter_foreground": "#444444",
     "invisibles": "color(#FFFFFF alpha(0.30))",
-    "line_highlight": "color(#FFFFFF alpha(0.15))",
+    "line_highlight": "color(#FFFFFF alpha(0.10))",
     "line_diff_width": "2",
     "line_diff_added": "color(#8AE234 alpha(0.5))",
     "line_diff_modified": "color(#D6BD0A alpha(0.5))",
@@ -386,6 +386,12 @@
       "scope": "bibop.action.negative-sign",
       "foreground": "#BA4C4C",
       "font_style": "bold"
+    },
+    {
+      "name": "Bibop Recipe Command Group Sign",
+      "scope": "bibop.command.group-sign",
+      "foreground": "#A33B2C",
+      "font_style": ""
     },
     {
       "scope": "entity.name.filename",

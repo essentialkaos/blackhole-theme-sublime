@@ -67,11 +67,12 @@ contexts:
       scope: constant.numeric.integer.decimal.bibop
 
   commands:
-    - match: '^(command):*([a-z0-9]*)'
+    - match: '^([+]?)(command):*([a-z0-9]*)'
       captures:
         0: support.function
-        1: meta.function
-        2: meta.function.tag
+        1: bibop.command.group-sign
+        2: meta.function
+        3: meta.function.tag
 
   actions:
     - match: '^(  |\t)[a-z-]+'
