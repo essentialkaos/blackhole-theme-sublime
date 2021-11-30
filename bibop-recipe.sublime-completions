@@ -81,6 +81,9 @@
     { "trigger": "lib-config\t— Checks if the library has a configuration file for pkg-config", "contents": "lib-config ${1:lib}" },
     { "trigger": "lib-exist\t— Checks if library file is exist in libraries directory", "contents": "lib-exist ${1:filename}" },
     { "trigger": "lib-linked\t— Checks if binary file has link with given library", "contents": "lib-linked ${1:binary} ${2:glob}" },
+    { "trigger": "lib-rpath\t— Checks if binary file has rpath field with given path", "contents": "lib-linked ${1:binary} ${2:path}" },
+    { "trigger": "lib-soname\t— Checks if shared library file has soname field with given value", "contents": "lib-linked ${1:lib} ${2:glob}" },
+    { "trigger": "lib-exported\t— Checks if shared library exported a symbol", "contents": "lib-linked ${1:binary} ${2:glob}" },
 
     { "trigger": "python-module\t— Checks if a given Python module could be loaded", "contents": "python-module ${1:name}" },
     { "trigger": "python3-module\t— Checks if a given Python 3 module could be loaded", "contents": "python3-module ${1:name}" }
