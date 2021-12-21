@@ -19,6 +19,17 @@ cp blackhole-theme-sublime-master/*.sublime-* "$HOME/Library/Application Support
 rm -rf blackhole-theme-sublime*
 ```
 
+#### Windows
+
+Press <kbd>Win+R</kbd>, type `powershell` and press Enter. Then do:
+
+```powershell
+Invoke-WebRequest -Uri "https://kaos.sh/blackhole-theme-sublime.zip" -OutFile blackhole-theme-sublime.zip
+Expand-Archive -LiteralPath blackhole-theme-sublime.zip -DestinationPath .
+cp .\blackhole-theme-sublime-master\*.sublime-* "$HOME\AppData\Roaming\Sublime Text 4\Packages\User\"
+Remove-Item blackhole-theme-sublime* -Recurse
+```
+
 ### License
 
 [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
