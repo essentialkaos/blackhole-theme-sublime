@@ -1,4 +1,4 @@
-## BLACKH⚫LE Theme for Sublime Text 3
+## BLACKH⚫LE Theme for Sublime Text 4
 
 <p align="center"><a href="#readme"><img src="https://gh.kaos.st/blackhole.jpg"/></a></p>
 
@@ -8,9 +8,12 @@
 
 ### Install
 
-1. Download the latest versions of `BLACKHOLE.sublime-color-scheme` and `*.sublime-syntax` files;
-2. Copy them into directory `Sublime Text 3/Packages/User/`;
-3. Go to _Preferences_ → _Color Scheme…_ and select BLACKHOLE.
+```bash
+curl -OL# https://kaos.sh/blackhole-theme-sublime.tar.gz
+tar xzf blackhole-theme-sublime.tar.gz
+cp blackhole-theme-sublime-master/*.sublime-* "$HOME/Library/Application Support/Sublime Text/Packages/User/"
+rm -rf blackhole-theme-sublime*
+```
 
 ### License
 
