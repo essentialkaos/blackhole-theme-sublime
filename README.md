@@ -8,6 +8,10 @@
 
 ### Install
 
+#### macOS
+
+Open `Terminal.app` and do:
+
 ```bash
 curl -OL# https://kaos.sh/blackhole-theme-sublime.tar.gz
 tar xzf blackhole-theme-sublime.tar.gz
