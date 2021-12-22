@@ -21,7 +21,7 @@ rm -rf blackhole-theme-sublime*
 
 #### Windows
 
-Press <kbd>Win+R</kbd>, type `powershell` and press Enter. Then do:
+Press <kbd>Win</kbd>+<kbd>R</kbd>, type `powershell` and press Enter. Then do:
 
 ```powershell
 Invoke-WebRequest -Uri "https://kaos.sh/blackhole-theme-sublime.zip" -OutFile blackhole-theme-sublime.zip
