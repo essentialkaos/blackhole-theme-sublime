@@ -1,10 +1,7 @@
-// Documentation at https://www.sublimetext.com/docs/themes.html
+//Documentationathttps: //www.sublimetext.com/docs/themes.html
 {
-  "variables":
-  {
-  },
-  "rules":
-  [
+  "variables": {},
+  "rules": [
     {
       "class": "title_bar",
       "bg": "#151515",
@@ -22,7 +19,7 @@
     {
       "class": "tab_control",
       "layer1.tint": "#111111",
-      "layer0.tint": "#222222",
+      "layer0.tint": "#222222"
     },
     {
       "class": "tab_control",
@@ -30,7 +27,7 @@
         "selected",
         "!highlighted"
       ],
-      "layer1.tint": "#181818",
+      "layer1.tint": "#181818"
     },
     {
       "class": "panel_control",
@@ -51,7 +48,7 @@
     },
     {
       "class": "icon_folder",
-      "layer0.tint": "#181818",
+      "layer0.tint": "#181818"
     },
     {
       "class": "sheet_contents",
@@ -84,7 +81,7 @@
     {
       "class": "puck_control",
       "layer0.tint": "#2a2a2a",
-      "layer0.opacity": 1,
+      "layer0.opacity": 1
     },
     {
       "class": "tool_tip_label_control",
@@ -94,7 +91,7 @@
     {
       "class": "overlay_control",
       "layer1.tint": "#222222",
-      "layer2.tint": "#111111",
+      "layer2.tint": "#111111"
     },
     {
       "class": "grid_layout_control",
@@ -108,7 +105,7 @@
       "class": "text_line_control",
       "layer0.tint": "#111111",
       "layer1.tint": "#222222",
-      "color_scheme_tint": "#111111",
+      "color_scheme_tint": "#111111"
     },
     {
       "class": "text_line_control",
@@ -117,40 +114,40 @@
           "class": "overlay_control"
         }
       ],
-      "layer1.tint": "#444444",
+      "layer1.tint": "#444444"
     },
     {
       "class": "quick_panel",
-      "layer0.tint": "#111111",
+      "layer0.tint": "#111111"
     },
     {
       "class": "quick_panel_row",
-      "layer0.tint": "#222222",
+      "layer0.tint": "#222222"
     },
     {
       "class": "mini_quick_panel_row",
       "layer0.tint": "#222222",
-      "layer1.tint": "#222222",
+      "layer1.tint": "#222222"
     },
     {
       "class": "popup_control",
-      "layer0.tint": "#181818",
+      "layer0.tint": "#181818"
     },
     {
       "class": "kind_container",
       "layer0.tint": "#222222",
       "layer1.tint": "#222222",
-      "layer2.tint": "#222222",
+      "layer2.tint": "#222222"
     },
     {
       "class": "auto_complete_detail_pane",
       "layer0.tint": "#222222",
-      "layer1.tint": "#222222",
+      "layer1.tint": "#222222"
     },
     {
       "class": "auto_complete_details",
       "background_color": "#222222",
       "monospace_background_color": "#222222"
-    },
+    }
   ]
 }
