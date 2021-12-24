@@ -26,7 +26,7 @@ Press <kbd>Win</kbd>+<kbd>R</kbd>, type `powershell` and press Enter. Then do:
 ```powershell
 Invoke-WebRequest -Uri "https://kaos.sh/blackhole-theme-sublime.zip" -OutFile blackhole-theme-sublime.zip
 Expand-Archive -LiteralPath blackhole-theme-sublime.zip -DestinationPath .
-Copy-Item -Path blackhole-theme-sublime-master\*.sublime-* -Destination "$HOME\AppData\Roaming\Sublime Text 4\Packages\User\"
+Copy-Item -Path blackhole-theme-sublime-master\*.sublime-* -Destination "$HOME\AppData\Roaming\Sublime Text\Packages\User\"
 Remove-Item blackhole-theme-sublime* -Recurse
 ```
 
