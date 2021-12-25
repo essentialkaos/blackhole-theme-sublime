@@ -8,18 +8,15 @@
       "fg": "#888888"
     },
     {
-      "class": "sidebar_container",
-      "layer0.tint": "#181818"
-    },
-    {
       "class": "tabset_control",
       "layer0.tint": "#151515",
       "layer1.tint": "#222222"
     },
     {
       "class": "tab_control",
+      "layer0.tint": "#222222",
       "layer1.tint": "#111111",
-      "layer0.tint": "#222222"
+      "layer2.tint": "#222222"
     },
     {
       "class": "tab_control",
@@ -41,10 +38,12 @@
     },
     {
       "class": "sidebar_container",
-      "settings": [
-        "ui_separator"
-      ],
-      "layer0.tint": "#181818"
+      "layer0.tint": "#151515",
+      "layer1.tint": "#222222"
+    },
+    {
+      "class": "sidebar_heading",
+      "color": "#555555"
     },
     {
       "class": "icon_folder",
@@ -130,6 +129,14 @@
       "layer1.tint": "#222222"
     },
     {
+      "class": "quick_panel_label",
+      "fg": "#777777"
+    },
+    {
+      "class": "quick_panel_path_label",
+      "fg": "#444444"
+    },
+    {
       "class": "popup_control",
       "layer0.tint": "#181818"
     },
@@ -148,6 +155,10 @@
       "class": "auto_complete_details",
       "background_color": "#222222",
       "monospace_background_color": "#222222"
+    },
+    {
+      "class": "quick_panel_detail_label",
+      "link_color": "#687d89"
     }
   ]
 }
