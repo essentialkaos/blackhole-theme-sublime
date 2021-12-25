@@ -9,6 +9,7 @@
     "punctuation": "color(var(highlighted) alpha(0.7))",
     "function": "#7297BF",
     "function-call": "#E9543F",
+    "variable": "#8AE234",
     "directive": "#CEB858",
     "diff_add": "#8FC440",
     "diff_del": "#C44040",
@@ -74,7 +75,7 @@
     {
       "name": "Variable",
       "scope": "variable.other, punctuation.definition.variable, punctuation.section.expansion.parameter",
-      "foreground": "#8AE234"
+      "foreground": "var(variable)"
     },
     {
       "name": "Variable Explicit",
@@ -270,6 +271,21 @@
       "scope": "constant.other.reference.link, entity.name.reference.link",
       "foreground": "var(entity)",
       "font_style": "italic"
+    },
+    {
+      "name": "Go External Variables",
+      "scope": "variable.other.go, variable.other.constant.declaration.go",
+      "foreground": "var(highlighted)"
+    },
+    {
+      "name": "Go Empty Variables",
+      "scope": "variable.language.blank.go",
+      "foreground": "var(variable)"
+    },
+    {
+      "name": "Go Variables",
+      "scope": "variable.declaration.go",
+      "foreground": "var(variable)"
     },
     {
       "name": "Diff Header",
