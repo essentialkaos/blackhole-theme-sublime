@@ -416,6 +416,10 @@
     {
       "scope": "message.error",
       "foreground": "#DB473F"
+    },
+    {
+      "scope": "markup.highlight.text.lsp",
+      "foreground": "#777777"
     }
   ]
 }
