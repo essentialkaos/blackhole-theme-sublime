@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+# ${1:Function description}
+#
+# 1: ${2:Variable Description} (${3:Type})
+#
+# Code: ${4:No}
+# Echo: ${5:No}
+]]></content>
+  <tabTrigger>##</tabTrigger>
+  <scope>source.shell.bash</scope>
+  <description>Generate comment for bash function with documentation in shdoc format</description>
+</snippet>
