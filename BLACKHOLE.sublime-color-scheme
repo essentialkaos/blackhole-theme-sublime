@@ -274,7 +274,7 @@
     },
     {
       "name": "Go External Variables",
-      "scope": "variable.other.go, variable.other.constant.declaration.go",
+      "scope": "variable.other.go, variable.other.constant.declaration.go, support.type.builtin.go",
       "foreground": "var(highlighted)"
     },
     {
