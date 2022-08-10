@@ -65,15 +65,6 @@
       "layer0.tint": "#111111"
     },
     {
-      "class": "progress_bar_control",
-      "layer0.tint": "#ff0000"
-    },
-    {
-      "class": "scroll_bar_control",
-      "layer0.tint": "#ff0000",
-      "layer1.tint": "#ff0000"
-    },
-    {
       "class": "scroll_track_control",
       "layer0.tint": "#141414"
     },
