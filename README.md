@@ -30,6 +30,17 @@ Copy-Item -Path blackhole-theme-sublime-master\*.sublime-* -Destination "$HOME\A
 Remove-Item blackhole-theme-sublime* -Recurse
 ```
 
+#### [`bat`](https://github.com/sharkdp/bat)
+
+```bash
+mkdir -p "$(bat --config-dir)/syntaxes"
+cd "$(bat --config-dir)/syntaxes"
+curl -OL# -o "bibop-recipe.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/bibop-recipe.sublime-syntax
+curl -OL# -o "knf.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/knf.sublime-syntax
+curl -OL# -o "rpm-spec.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/rpm-spec.sublime-syntax
+bat cache --build
+```
+
 ### License
 
 [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
