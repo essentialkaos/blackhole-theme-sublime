@@ -410,6 +410,24 @@
       "font_style": ""
     },
     {
+      "name": "Ansible Variable",
+      "scope": "storage.type.ansible",
+      "foreground": "var(variable)",
+      "font_style": ""
+    },
+    {
+      "name": "Ansible Keyword",
+      "scope": "keyword.other.ansible",
+      "foreground": "var(function)",
+      "font_style": ""
+    },
+    {
+      "name": "Ansible Title",
+      "scope": "string.quoted.double.ansible",
+      "foreground": "var(string)",
+      "font_style": "bold"
+    },
+    {
       "scope": "entity.name.filename",
       "foreground": "#DBC33F"
     },
