@@ -1,6 +1,6 @@
 %YAML 1.2
 ---
-# http://www.sublimetext.com/docs/3/syntax.html
+# https://www.sublimetext.com/docs/syntax.html
 name: KNF
 file_extensions:
   - knf
@@ -34,8 +34,6 @@ contexts:
         - match: '"'
           scope: punctuation.definition.string.end.knf
           pop: true
-        - include: string-placeholder
-        - include: string-escaped-char
     - match: "'"
       scope: punctuation.definition.string.begin.knf
       push:
@@ -43,8 +41,6 @@ contexts:
         - match: "'"
           scope: punctuation.definition.string.end.knf
           pop: true
-        - include: string-placeholder
-        - include: string-escaped-char
 
   macroses:
     - match: \{([A-Za-z0-9_-]{1,}):([A-Za-z0-9_-]{1,})\}

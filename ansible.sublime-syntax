@@ -1,0 +1,82 @@
+%YAML 1.2
+---
+# https://www.sublimetext.com/docs/syntax.html
+name: Ansible
+file_extensions:
+  - yml
+  - yaml
+scope: source.ansible
+
+contexts:
+  main:
+    - include: comments
+    - include: keywords
+    - include: jinja
+    - include: strings
+    - include: tasks
+    - include: conditionals
+
+  comments:
+    - match: ^[\t ]*#
+      scope: punctuation.definition.comment
+      push:
+        - meta_scope: comment.line
+        - include: pop-on-line-end
+    - match: ^[\-]{3}
+      scope: comment.line
+
+  keywords:
+    - match: \b(true|false)\b
+      scope: constant.language.boolean.yaml
+    - match: '\b([0-9]+\.[0-9]*|\.[0-9]+)([eE][+-]?\d+)?\b'
+      scope: constant.numeric.float
+    - match: '\b\d+\b'
+      scope: constant.numeric.integer
+
+  tasks:
+    - match: (\-) (name)(:)\ +(.*)
+      scope: keyword.other.ansible.task
+      captures:
+        1: punctuation.separator
+        2: keyword.other.ansible.task.name
+        3: keyword.operator.assignment
+        4: keyword.other.ansible.task.desc
+    - match: '[ ]{2,}block(:)'
+      scope: keyword.other.ansible.block
+      captures:
+        1: keyword.operator.assignment
+    - match: '[ ]{2,}([\w\d]+)(:)'
+      scope: keyword.other.ansible.action
+      captures:
+        1: keyword.other.ansible.action.name
+        2: keyword.operator.assignment
+
+  conditionals:
+    - match: \b(is|or|and|(or )?not|if|else|(((un)?defined)))\b
+      scope: constant.character
+
+  strings:
+    - match: '"'
+      scope: punctuation.definition.string.begin
+      push:
+        - meta_scope: string.quoted.double
+        - match: '"'
+          scope: punctuation.definition.string.end
+          pop: true
+        - include: jinja-variable
+    - match: "'"
+      scope: punctuation.definition.string.begin
+      push:
+        - meta_scope: string.quoted.single
+        - match: "'"
+          scope: punctuation.definition.string.end
+          pop: true
+        - include: jinja-variable
+
+  jinja-variable:
+    - match: (\{\{ *[^\{\}]+ *\}\})|(\$\{[^\{\}]+\})
+      scope: storage.type.ansible
+
+  pop-on-line-end:
+    - match: $
+      pop: true

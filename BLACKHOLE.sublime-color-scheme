@@ -416,16 +416,28 @@
       "font_style": ""
     },
     {
-      "name": "Ansible Keyword",
-      "scope": "keyword.other.ansible",
+      "name": "Ansible Task Name",
+      "scope": "keyword.other.ansible.task.name",
       "foreground": "var(function)",
       "font_style": ""
     },
     {
-      "name": "Ansible Title",
-      "scope": "string.quoted.double.ansible",
-      "foreground": "var(string)",
+      "name": "Ansible Task Description",
+      "scope": "keyword.other.ansible.task.desc",
+      "foreground": "#65B0D8",
       "font_style": "bold"
+    },
+    {
+      "name": "Ansible Block",
+      "scope": "keyword.other.ansible.block",
+      "foreground": "var(function)",
+      "font_style": "italic"
+    },
+    {
+      "name": "Ansible Action Name",
+      "scope": "keyword.other.ansible.action.name",
+      "foreground": "#B7AE89",
+      "font_style": ""
     },
     {
       "scope": "entity.name.filename",

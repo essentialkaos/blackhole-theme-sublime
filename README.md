@@ -38,6 +38,7 @@ cd "$(bat --config-dir)/syntaxes"
 curl -OL# -o "bibop-recipe.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/bibop-recipe.sublime-syntax
 curl -OL# -o "knf.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/knf.sublime-syntax
 curl -OL# -o "rpm-spec.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/rpm-spec.sublime-syntax
+curl -OL# -o "ansible.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/ansible.sublime-syntax
 bat cache --build
 ```
 
