@@ -34,6 +34,12 @@ contexts:
       scope: constant.numeric.integer
 
   tasks:
+    - match: (\-) (hosts)(:)
+      scope: keyword.other.ansible.hosts
+      captures:
+        1: punctuation.separator
+        2: keyword.other.ansible.hosts.name
+        3: keyword.operator.assignment
     - match: (\-) (name)(:)\ +(.*)
       scope: keyword.other.ansible.task
       captures:
@@ -41,11 +47,11 @@ contexts:
         2: keyword.other.ansible.task.name
         3: keyword.operator.assignment
         4: keyword.other.ansible.task.desc
-    - match: '[ ]{2,}block(:)'
+    - match: '[ \t]{2,}block(:)'
       scope: keyword.other.ansible.block
       captures:
         1: keyword.operator.assignment
-    - match: '[ ]{2,}([\w\d]+)(:)'
+    - match: '^[ \t]{0,}([\w\d]+)(:)'
       scope: keyword.other.ansible.action
       captures:
         1: keyword.other.ansible.action.name

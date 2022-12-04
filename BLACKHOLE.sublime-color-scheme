@@ -417,7 +417,7 @@
     },
     {
       "name": "Ansible Task Name",
-      "scope": "keyword.other.ansible.task.name",
+      "scope": "keyword.other.ansible.task.name, keyword.other.ansible.hosts.name",
       "foreground": "var(function)",
       "font_style": ""
     },
