@@ -51,7 +51,7 @@ contexts:
       scope: keyword.other.ansible.block
       captures:
         1: keyword.operator.assignment
-    - match: '^[ \t]{0,}([\w\d]+)(:)'
+    - match: '^[ \t]{0,}([\w\d_-]+)(:)'
       scope: keyword.other.ansible.action
       captures:
         1: keyword.other.ansible.action.name
