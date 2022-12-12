@@ -39,6 +39,8 @@ contexts:
           scope: punctuation.definition.string.end.spec
           pop: true
         - include: string-placeholder
+        - include: macroses
+        - include: bash-variables
     - match: "'"
       scope: punctuation.definition.string.begin.spec
       push:
@@ -50,6 +52,8 @@ contexts:
           scope: punctuation.definition.string.end.spec
           pop: true
         - include: string-placeholder
+        - include: macroses
+        - include: bash-variables
 
   bash-variables:
     - match: \$([a-zA-Z_0-9])*\b
@@ -86,7 +90,7 @@ contexts:
       scope: support.function.spec
 
   definitions:
-    - match: '(\%define|\%global) +([\d\w\S]+)'
+    - match: '(\%define|\%global|\%bcond_[\w]+) +([\d\w\S]+)'
       captures:
         0: spec.definition
         1: support.function.spec
