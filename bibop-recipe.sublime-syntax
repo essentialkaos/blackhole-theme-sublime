@@ -92,3 +92,7 @@ contexts:
       captures:
         0: variable.other.bibop
         1: variable.other.name.bibop
+
+  pop-on-line-end:
+    - match: $
+      pop: true
