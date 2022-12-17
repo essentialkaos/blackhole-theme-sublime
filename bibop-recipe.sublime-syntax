@@ -29,10 +29,6 @@ contexts:
         - meta_scope: comment.line.number-sign.bibop
         - include: pop-on-line-end
 
-  pop-on-line-end:
-    - match: $
-      pop: true
-
   strings:
     - match: '"'
       scope: punctuation.definition.string.begin.bibop
