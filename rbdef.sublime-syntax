@@ -1,0 +1,72 @@
+%YAML 1.2
+---
+# https://www.sublimetext.com/docs/syntax.html
+name: RBBuild Def
+scope: source.rbdef
+first_line_match: "# -- \\[RBdef\\] --"
+
+contexts:
+  main:
+    - include: comments
+    - include: strings
+    - include: variables
+    - include: keywords
+
+  comments:
+    - match: (?=^\s*#)
+      push:
+        - match: \#
+          scope: punctuation.definition.comment
+          set:
+            - meta_scope: comment.line
+            - include: pop-on-line-end
+    - match: \#
+      scope: punctuation.definition.comment
+      push:
+        - meta_scope: comment.line
+        - include: pop-on-line-end
+
+  strings:
+    - match: '"'
+      scope: punctuation.definition.string.begin
+      push:
+        - meta_scope: string.quoted.double
+        - match: '"'
+          scope: punctuation.definition.string.end
+          pop: true
+        - match: $
+          scope: punctuation.definition.string.end
+          pop: true
+        - include: variables
+    - match: "'"
+      scope: punctuation.definition.string.begin
+      push:
+        - meta_scope: string.quoted.single
+        - match: "'"
+          scope: punctuation.definition.string.end
+          pop: true
+        - match: $
+          scope: punctuation.definition.string.end
+          pop: true
+
+  variables:
+    - match: '\{([a-zA-Z0-9_-]+)\}'
+      captures:
+        0: variable.other
+
+  keywords:
+    - match: '^[\t ]+([a-zA-Z0-9]+)(:)'
+      captures: 
+        1: entity.name.function
+        2: keyword.operator.assignment
+    - match: '^([a-zA-Z0-9]+)\(([^\)]+)\)(:)'
+      captures: 
+        1: variable.annotation
+        2: variable.parameter
+        3: keyword.operator.assignment
+    - match: '^\[([\w\d]+)\]$'
+      scope: keyword
+
+  pop-on-line-end:
+    - match: $
+      pop: true

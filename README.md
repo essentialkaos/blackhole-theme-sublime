@@ -39,6 +39,7 @@ curl -OL# -o "bibop-recipe.sublime-syntax" https://kaos.sh/blackhole-theme-subli
 curl -OL# -o "knf.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/knf.sublime-syntax
 curl -OL# -o "rpm-spec.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/rpm-spec.sublime-syntax
 curl -OL# -o "ansible.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/ansible.sublime-syntax
+curl -OL# -o "rbdef.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/rbdef.sublime-syntax
 bat cache --build
 ```
 
