@@ -71,7 +71,7 @@ contexts:
         3: meta.function.tag
 
   actions:
-    - match: '^(  |\t)[a-z-]+'
+    - match: '^(  |\t)[a-z0-9-]+'
       scope: bibop.action
     - match: '^(?:  |\t)(\!)([a-z-]+)'
       captures:
