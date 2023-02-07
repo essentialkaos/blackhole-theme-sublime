@@ -85,7 +85,7 @@
     { "trigger": "lib-soname\t— Checks if shared library file has soname field with given value", "contents": "lib-linked ${1:lib} ${2:glob}" },
     { "trigger": "lib-exported\t— Checks if shared library exported a symbol", "contents": "lib-linked ${1:binary} ${2:glob}" },
 
-    { "trigger": "python-module\t— Checks if a given Python module could be loaded", "contents": "python-module ${1:name}" },
-    { "trigger": "python3-module\t— Checks if a given Python 3 module could be loaded", "contents": "python3-module ${1:name}" }
+    { "trigger": "python2-package\t— Checks if a given Python 2.x package could be loaded", "contents": "python-module ${1:name}" },
+    { "trigger": "python3-package\t— Checks if a given Python 3.x package could be loaded", "contents": "python3-module ${1:name}" }
   ]
 }
