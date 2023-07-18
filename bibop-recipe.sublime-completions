@@ -69,6 +69,7 @@
     { "trigger": "service-present\t— Checks if service is present on the system", "contents": "service-present ${1:service-name}" },
     { "trigger": "service-enabled\t— Checks if auto start is enabled for service", "contents": "service-enabled ${1:service-name}" },
     { "trigger": "service-works\t— Checks if service is works", "contents": "service-works ${1:service-name}" },
+    { "trigger": "wait-service\t— Waits for service start", "contents": "wait-service ${1:service-name} ${2:timeout}" },
 
     { "trigger": "http-status\t— Makes HTTP request and checks status code", "contents": "http-status ${1:method} ${2:url} ${3:code}" },
     { "trigger": "http-header\t— Makes HTTP request and checks response header value", "contents": "http-header ${1:method} ${2:url} ${3:header-name} ${4:header-value}" },
