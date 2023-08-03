@@ -288,6 +288,12 @@
       "foreground": "var(variable)"
     },
     {
+      "name": "Go Annotation",
+      "scope": "variable.annotation.go",
+      "foreground": "#999",
+      "font_style": ""
+    },
+    {
       "name": "Diff Header",
       "scope": "meta.diff, meta.diff.header, punctuation.separator.key-value.diff, meta.separator.diff",
       "foreground": "#666666"
