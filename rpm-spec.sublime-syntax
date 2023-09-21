@@ -72,7 +72,7 @@ contexts:
       scope: constant.numeric.float.decimal.spec
     - match: '\b\d+\b'
       scope: constant.numeric.integer.decimal.spec
-    - match: '(?:^[ \t]{0,}|\ \|\| | \&\& )(cat|cd|chmod|chown|cmake|cp|echo|env|exit|export|find|getconf|getent|git|grep|groupadd|groupadd|head|iconv|install|ldconfig|ln|ls|make|mkdir|mv|patch|popd|printenv|pushd|pwd|rename|rm|sed|service|sha[\d]+hmac|sha[\d]+sum|sort|strip|svn|systemctl|systemd-[\w\d_-]+|tail|touch|tr|truncate|update-alternatives|useradd|wc|yes)\b'
+    - match: '(?:^[ \t]{0,}|\ \|\| | \&\& )(cat|cd|chmod|chown|chrpath|cmake|cp|echo|env|exit|export|find|getconf|getent|git|grep|groupadd|groupadd|head|iconv|install|ldconfig|ln|ls|make|mkdir|mv|patch|popd|printenv|pushd|pwd|rename|rm|sed|service|sha[\d]+hmac|sha[\d]+sum|sort|strip|svn|systemctl|systemd-[\w\d_-]+|tail|touch|tr|truncate|update-alternatives|useradd|wc|yes)\b'
       captures:
         1: variable.function.spec
     - match: '(?:^[ \t]{0,}|\ \|\| | \&\& )(\/(bin|sbin|usr\/bin|usr\/sbin)\/([\w\d_-]+))\b'
