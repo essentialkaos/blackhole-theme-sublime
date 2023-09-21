@@ -1,6 +1,8 @@
 %YAML 1.2
 ---
 # https://www.sublimetext.com/docs/syntax.html
+# https://kaos.sh/blackhole-theme-sublime
+
 name: RPM Spec
 file_extensions:
   - spec
@@ -12,13 +14,13 @@ contexts:
   main:
     - include: comments
     - include: strings
-    - include: macroses
     - include: definitions
     - include: bash-variables
     - include: keywords
     - include: scriptlets
     - include: functions
     - include: directives
+    - include: macroses
     - include: changelogs
 
   macroses:
@@ -70,11 +72,15 @@ contexts:
       scope: constant.numeric.float.decimal.spec
     - match: '\b\d+\b'
       scope: constant.numeric.integer.decimal.spec
-    - match: '^[ \t]{0,}(cat|chmod|chown|cmake|cp|echo|exit|export|find|git|getent|groupadd|install|make|mkdir|ln|mv|patch|popd|pushd|rm|sed|service|svn|systemctl|touch|useradd)\b'
-      scope: variable.function.spec
+    - match: '(?:^[ \t]{0,}|\ \|\| | \&\& )(cat|cd|chmod|chown|cmake|cp|echo|env|exit|export|find|getconf|getent|git|grep|groupadd|groupadd|head|iconv|install|ldconfig|ln|ls|make|mkdir|mv|patch|popd|printenv|pushd|pwd|rename|rm|sed|service|sha[\d]+hmac|sha[\d]+sum|sort|strip|svn|systemctl|systemd-[\w\d_-]+|tail|touch|tr|truncate|update-alternatives|useradd|wc|yes)\b'
+      captures:
+        1: variable.function.spec
+    - match: '(?:^[ \t]{0,}|\ \|\| | \&\& )(\/(bin|sbin|usr\/bin|usr\/sbin)\/([\w\d_-]+))\b'
+      captures:
+        1: variable.function.spec
     - match: (&1>|&2>|&>|&>>|1>|2>)
       scope: keyword.operator
-    - match: \b(?>[\t ]*)(if|else|fi|elif|while|done)\b
+    - match: \b(?>[\t ]*)(if|else|fi|elif|while|done|-eq|-gt|-lt|-ge|-le)\b
       captures:
         1: keyword.other
     - match: (?>\;) *(do|then)
