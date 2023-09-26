@@ -51,6 +51,7 @@ contexts:
         - match: $
           scope: punctuation.definition.string.end.bibop
           pop: true
+        - include: variables
 
   keywords:
     - match: '^(dir|require-root|unsafe-actions|fast-finish|lock-workdir|unbuffer|delay|https-skip-verify|pkg)'
