@@ -64,7 +64,7 @@ contexts:
       scope: constant.numeric.integer.decimal.bibop
 
   commands:
-    - match: '^([+]?)(command):*([a-z0-9]*)'
+    - match: '^([+]?)(command):*([\w@_-]*)'
       captures:
         0: support.function
         1: bibop.command.group-sign
