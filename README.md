@@ -16,6 +16,7 @@ Open `Terminal.app` and do:
 curl -OL# https://kaos.sh/blackhole-theme-sublime.tar.gz
 tar xzf blackhole-theme-sublime.tar.gz
 cp blackhole-theme-sublime-master/*.sublime-* "$HOME/Library/Application Support/Sublime Text/Packages/User/"
+cp blackhole-theme-sublime-master/*.tmPreferences "$HOME/Library/Application Support/Sublime Text/Packages/User/"
 rm -rf blackhole-theme-sublime*
 ```
 
@@ -27,6 +28,7 @@ Press <kbd>Win</kbd>+<kbd>R</kbd>, type `powershell` and press Enter. Then do:
 Invoke-WebRequest -Uri "https://kaos.sh/blackhole-theme-sublime.zip" -OutFile blackhole-theme-sublime.zip
 Expand-Archive -LiteralPath blackhole-theme-sublime.zip -DestinationPath .
 Copy-Item -Path blackhole-theme-sublime-master\*.sublime-* -Destination "$HOME\AppData\Roaming\Sublime Text\Packages\User\"
+Copy-Item -Path blackhole-theme-sublime-master\*.tmPreferences -Destination "$HOME\AppData\Roaming\Sublime Text\Packages\User\"
 Remove-Item blackhole-theme-sublime* -Recurse
 ```
 
