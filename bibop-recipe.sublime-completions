@@ -1,7 +1,6 @@
 {
   "scope": "source.bibop",
   "completions": [
-    { "trigger": "target\t— List of recipe targets", "contents": "target ${1:target}" },
     { "trigger": "pkg\t— List of required packages", "contents": "pkg ${1:package}" },
     { "trigger": "unsafe-actions\t— Allow doing unsafe actions", "contents": "unsafe-actions ${1:yes}" },
     { "trigger": "require-root\t— Requires root privileges for the recipe", "contents": "require-root ${1:yes}" },

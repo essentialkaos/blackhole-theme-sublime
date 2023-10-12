@@ -54,7 +54,7 @@ contexts:
         - include: variables
 
   keywords:
-    - match: '^(dir|require-root|unsafe-actions|fast-finish|lock-workdir|unbuffer|delay|https-skip-verify|pkg|target)'
+    - match: '^(dir|require-root|unsafe-actions|fast-finish|lock-workdir|unbuffer|delay|https-skip-verify|pkg)'
       scope: keyword.other
     - match: '\b(true|false|yes|no)\b'
       scope: constant.language
