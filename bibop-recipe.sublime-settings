@@ -1,4 +1,5 @@
 {
   "auto_complete": true,
-  "auto_complete_selector": "bibop.action, keyword.other"
+  "auto_complete_delay": 300,
+  "auto_complete_selector": "source.bibop"
 }
