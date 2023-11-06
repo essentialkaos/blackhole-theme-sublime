@@ -447,6 +447,16 @@
       "font_style": ""
     },
     {
+      "name": "fmtc tag",
+      "scope": "variable.other.fmtc.tag",
+      "foreground": "#4E7982"
+    },
+    {
+      "name": "fmtc tag value",
+      "scope": "variable.other.fmtc.tag.value",
+      "foreground": "#6CA6B2"
+    },
+    {
       "scope": "entity.name.filename",
       "foreground": "#DBC33F"
     },
