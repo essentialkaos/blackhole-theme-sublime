@@ -11,7 +11,7 @@ contexts:
   match-template-string:
     - meta_append: true
 
-    - match: '\{([\-_*^~@])\}'
+    - match: '\{([\-_*^~@]+)\}'
       captures: 
         0: variable.other.fmtc.tag.modificator
         1: variable.other.fmtc.tag.value
@@ -21,7 +21,7 @@ contexts:
         0: variable.other.fmtc.tag.reset
         1: variable.other.fmtc.tag.value
 
-    - match: '\{(([drgybmcsDRGYBMCS])([\-_*^~@]*))\}'
+    - match: '\{(([\-_*^~@]?)([drgybmcsDRGYBMCS])([\-_*^~@]?))\}'
       captures: 
         0: variable.other.fmtc.tag.simple
         1: variable.other.fmtc.tag.value
