@@ -1,6 +1,7 @@
 %YAML 1.2
 ---
 # https://www.sublimetext.com/docs/syntax.html
+# https://github.com/essentialkaos/ek/blob/master/fmtc/README.md
 name: Go (+fmtc)
 scope: source.go
 file_extensions: [go]
@@ -11,17 +12,17 @@ contexts:
   match-template-string:
     - meta_append: true
 
-    - match: '\{([\-_*^~@]+)\}'
+    - match: '\{([\-_*^~@&]+)\}'
       captures: 
         0: variable.other.fmtc.tag.modificator
         1: variable.other.fmtc.tag.value
 
-    - match: '\{(\!([\-_*^~@]|))\}'
+    - match: '\{(\!([\-_*^~@&]|))\}'
       captures: 
         0: variable.other.fmtc.tag.reset
         1: variable.other.fmtc.tag.value
 
-    - match: '\{(([\-_*^~@]?)([drgybmcsDRGYBMCS])([\-_*^~@]?))\}'
+    - match: '\{(([\-_*^~@&]?)([drgybmcsDRGYBMCS])([\-_*^~@&]?))\}'
       captures: 
         0: variable.other.fmtc.tag.simple
         1: variable.other.fmtc.tag.value
