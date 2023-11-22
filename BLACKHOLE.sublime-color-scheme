@@ -55,7 +55,7 @@
     },
     {
       "name": "String",
-      "scope": "string, string.quoted.single",
+      "scope": "string, string.quoted.single, meta.string",
       "foreground": "var(string)"
     },
     {
