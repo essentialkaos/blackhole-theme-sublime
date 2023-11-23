@@ -295,6 +295,12 @@
       "font_style": ""
     },
     {
+      "name": "Bash test brackets",
+      "scope": "support.function.test",
+      "foreground": "#CCC",
+      "font_style": "bold"
+    },
+    {
       "name": "Diff Header",
       "scope": "meta.diff, meta.diff.header, punctuation.separator.key-value.diff, meta.separator.diff",
       "foreground": "#666666"
