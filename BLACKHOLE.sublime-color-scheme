@@ -312,7 +312,7 @@
     },
     {
       "name": "Bash variable brackets",
-      "scope": "meta.function-call.arguments.shell punctuation.section.interpolation.begin.shell, meta.function-call.arguments.shell punctuation.section.interpolation.end.shell",
+      "scope": "meta.function-call.arguments.shell punctuation.section.interpolation.begin.shell, meta.function-call.arguments.shell punctuation.section.interpolation.end.shell, meta.interpolation.parameter.shell punctuation.section.interpolation.begin.shell, meta.interpolation.parameter.shell punctuation.section.interpolation.end.shell",
       "foreground": "var(variable)"
     },
     {
