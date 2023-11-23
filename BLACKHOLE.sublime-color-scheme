@@ -75,7 +75,7 @@
     },
     {
       "name": "Variable",
-      "scope": "variable.other, punctuation.definition.variable, punctuation.section.expansion.parameter",
+      "scope": "variable.other, punctuation.definition.variable, punctuation.section.expansion.parameter, meta.interpolation.parameter.shell",
       "foreground": "var(variable)"
     },
     {
