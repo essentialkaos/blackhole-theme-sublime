@@ -75,7 +75,7 @@
     },
     {
       "name": "Variable",
-      "scope": "variable.other, punctuation.definition.variable, punctuation.section.expansion.parameter, meta.interpolation.parameter.shell",
+      "scope": "variable.other, punctuation.definition.variable, punctuation.section.expansion.parameter",
       "foreground": "var(variable)"
     },
     {
@@ -299,6 +299,21 @@
       "scope": "support.function.test",
       "foreground": "#CCC",
       "font_style": "bold"
+    },
+    {
+      "name": "Bash function call",
+      "scope": "meta.interpolation.command.shell punctuation.section.interpolation.begin.shell, meta.interpolation.command.shell punctuation.section.interpolation.end.shell",
+      "foreground": "var(function-call)"
+    },
+    {
+      "name": "Bash function call data",
+      "scope": "meta.function-call.arguments.shell",
+      "foreground": "#F3F3F3"
+    },
+    {
+      "name": "Bash variable brackets",
+      "scope": "meta.function-call.arguments.shell punctuation.section.interpolation.begin.shell, meta.function-call.arguments.shell punctuation.section.interpolation.end.shell",
+      "foreground": "var(variable)"
     },
     {
       "name": "Diff Header",
