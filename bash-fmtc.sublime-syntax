@@ -1,0 +1,45 @@
+%YAML 1.2
+---
+# https://www.sublimetext.com/docs/syntax.html
+# https://github.com/essentialkaos/ek/blob/master/fmtc/README.md
+name: Bash (+fmtc)
+scope: source.shell.bash
+version: 2
+extends: Packages/ShellScript/Bash.sublime-syntax
+
+contexts:
+  string-quoted-double-body:
+    - meta_append: true
+
+    - match: '\{([\-_*^~@&\+=]+)\}'
+      captures: 
+        0: variable.other.fmtc.tag.modificator
+        1: variable.other.fmtc.tag.value
+
+    - match: '\{(\!([\-_*^~@&\+=]|))\}'
+      captures: 
+        0: variable.other.fmtc.tag.reset
+        1: variable.other.fmtc.tag.value
+
+    - match: '\{(([\-_*^~@&\+=]?)([drgybmcsDRGYBMCS])([\-_*^~@&\+=]?))\}'
+      captures: 
+        0: variable.other.fmtc.tag.simple
+        1: variable.other.fmtc.tag.value
+
+    - match: '\{(#|%)([0-9]{1,3})\}'
+      captures: 
+        0: variable.other.fmtc.tag.256
+        1: variable.other.fmtc.tag.prefix
+        2: variable.other.fmtc.tag.value
+
+    - match: '\{(#|%)([a-fA-F0-9]{6})\}'
+      captures: 
+        0: variable.other.fmtc.tag.hex
+        1: variable.other.fmtc.tag.prefix
+        2: variable.other.fmtc.tag.value
+
+    - match: '\{(\?)([a-zA-Z0-9_\-]+)\}'
+      captures: 
+        0: variable.other.fmtc.tag.named
+        1: variable.other.fmtc.tag.prefix
+        2: variable.other.fmtc.tag.value
