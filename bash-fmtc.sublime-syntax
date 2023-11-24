@@ -10,7 +10,13 @@ extends: Packages/ShellScript/Bash.sublime-syntax
 contexts:
   string-quoted-double-body:
     - meta_append: true
+    - include: fmtc-tags
 
+  heredocs-body-common-with-expansion:
+    - meta_append: true
+    - include: fmtc-tags
+
+  fmtc-tags:
     - match: '\{([\-_*^~@&\+=]+)\}'
       captures: 
         0: variable.other.fmtc.tag.modificator
