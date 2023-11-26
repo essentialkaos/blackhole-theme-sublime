@@ -13,11 +13,11 @@
 Open `Terminal.app` and do:
 
 ```bash
-curl -OL# https://kaos.sh/blackhole-theme-sublime.tar.gz
-tar xzf blackhole-theme-sublime.tar.gz
-cp blackhole-theme-sublime-master/*.sublime-* "$HOME/Library/Application Support/Sublime Text/Packages/User/"
-cp blackhole-theme-sublime-master/*.tmPreferences "$HOME/Library/Application Support/Sublime Text/Packages/User/"
-rm -rf blackhole-theme-sublime*
+curl -OL# https://kaos.sh/blackhole-theme-sublime.tar.gz && \
+  tar xzf blackhole-theme-sublime.tar.gz && \
+  cp blackhole-theme-sublime-master/*.sublime-* "$HOME/Library/Application Support/Sublime Text/Packages/User/" && \
+  cp blackhole-theme-sublime-master/*.tmPreferences "$HOME/Library/Application Support/Sublime Text/Packages/User/" && \
+  rm -rf blackhole-theme-sublime*
 ```
 
 #### Windows
@@ -35,14 +35,15 @@ Remove-Item blackhole-theme-sublime* -Recurse
 #### [`bat`](https://github.com/sharkdp/bat)
 
 ```bash
-mkdir -p "$(bat --config-dir)/syntaxes"
-cd "$(bat --config-dir)/syntaxes"
-curl -OL# -o "bibop-recipe.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/bibop-recipe.sublime-syntax
-curl -OL# -o "knf.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/knf.sublime-syntax
-curl -OL# -o "rpm-spec.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/rpm-spec.sublime-syntax
-curl -OL# -o "ansible.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/ansible.sublime-syntax
-curl -OL# -o "rbdef.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/rbdef.sublime-syntax
-bat cache --build
+mkdir -p "$(bat --config-dir)/syntaxes" && cd "$(bat --config-dir)/syntaxes" && \
+  curl -OL# -o "bibop-recipe.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/bibop-recipe.sublime-syntax && \
+  curl -OL# -o "knf.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/knf.sublime-syntax && \
+  curl -OL# -o "rpm-spec.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/rpm-spec.sublime-syntax && \
+  curl -OL# -o "ansible.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/ansible.sublime-syntax && \
+  curl -OL# -o "rbdef.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/rbdef.sublime-syntax && \
+  mkdir -p "$(bat --config-dir)/themes" && cd "$(bat --config-dir)/themes" && \
+  curl -OL# -o "BLACKHOLE.tmTheme" https://kaos.sh/blackhole-theme-sublime/BLACKHOLE.tmTheme && \
+  bat cache --build
 ```
 
 ### License
