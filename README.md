@@ -43,7 +43,7 @@ mkdir -p "$(bat --config-dir)/syntaxes" && cd "$(bat --config-dir)/syntaxes" && 
   curl -OL# -o "rbdef.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/rbdef.sublime-syntax && \
   mkdir -p "$(bat --config-dir)/themes" && cd "$(bat --config-dir)/themes" && \
   curl -OL# -o "BLACKHOLE.tmTheme" https://kaos.sh/blackhole-theme-sublime/BLACKHOLE.tmTheme && \
-  bat cache --build
+  bat cache --build && echo "--theme=BLACKHOLE" >> $(bat --config-file) && cd ~
 ```
 
 ### License
