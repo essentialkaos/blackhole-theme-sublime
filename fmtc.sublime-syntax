@@ -1,7 +1,7 @@
 %YAML 1.2
 ---
 # https://www.sublimetext.com/docs/syntax.html
-# https://github.com/essentialkaos/ek/blob/master/fmtc/README.md
+# https://kaos.sh/fmtc/w/Home
 name: Go (+fmtc)
 scope: source.go
 file_extensions: [go]
@@ -11,7 +11,13 @@ extends: Packages/Go/Go.sublime-syntax
 contexts:
   match-template-string:
     - meta_append: true
+    - include: fmtc-tags
 
+  match-interpreted-string-inner:
+    - meta_append: true
+    - include: fmtc-tags
+
+  fmtc-tags:
     - match: '\{([\-_*^~@&\+=]+)\}'
       captures: 
         0: variable.other.fmtc.tag.modificator
