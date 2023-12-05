@@ -13,6 +13,10 @@ contexts:
     - meta_append: true
     - include: fmtc-tags
 
+  match-raw-string-content:
+    - meta_append: true
+    - include: fmtc-tags
+
   match-interpreted-string-inner:
     - meta_append: true
     - include: fmtc-tags
