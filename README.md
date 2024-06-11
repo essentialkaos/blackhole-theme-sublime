@@ -1,10 +1,10 @@
 ## BLACKH⚫LE Theme for Sublime Text 3/4
 
-<p align="center"><a href="#readme"><img src="https://gh.kaos.st/blackhole.jpg"/></a></p>
+<p align="center"><a href="#readme"><img src=".github/images/card.jpg"/></a></p>
 
 ### Screenshots
 
-![Screenshot](https://gh.kaos.st/blackhole-sublime.png)
+![Screenshot](.github/images/blackhole-sublime.png)
 
 ### Install
 
@@ -36,14 +36,18 @@ Remove-Item blackhole-theme-sublime* -Recurse
 
 ```bash
 mkdir -p "$(bat --config-dir)/syntaxes" && cd "$(bat --config-dir)/syntaxes" && \
-  curl -OL# -o "bibop-recipe.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/bibop-recipe.sublime-syntax && \
-  curl -OL# -o "knf.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/knf.sublime-syntax && \
-  curl -OL# -o "rpm-spec.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/rpm-spec.sublime-syntax && \
-  curl -OL# -o "ansible.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/ansible.sublime-syntax && \
-  curl -OL# -o "rbdef.sublime-syntax" https://kaos.sh/blackhole-theme-sublime/rbdef.sublime-syntax && \
-  mkdir -p "$(bat --config-dir)/themes" && cd "$(bat --config-dir)/themes" && \
-  curl -OL# -o "BLACKHOLE.tmTheme" https://kaos.sh/blackhole-theme-sublime/BLACKHOLE.tmTheme && \
-  bat cache --build && echo "--theme=BLACKHOLE" >> $(bat --config-file) && cd ~
+  curl -ZL --max-redirs 3 --parallel-max 5 --remote-name-all \
+  https://kaos.sh/blackhole-theme-sublime/bibop-recipe.sublime-syntax \
+  https://kaos.sh/blackhole-theme-sublime/knf.sublime-syntax \
+  https://kaos.sh/blackhole-theme-sublime/rpm-spec.sublime-syntax \
+  https://kaos.sh/blackhole-theme-sublime/ansible.sublime-syntax \
+  https://kaos.sh/blackhole-theme-sublime/rbdef.sublime-syntax
+
+mkdir -p "$(bat --config-dir)/themes" && cd "$(bat --config-dir)/themes" && \
+  curl -ZL --max-redirs 3 --remote-name-all \
+  https://kaos.sh/blackhole-theme-sublime/BLACKHOLE.tmTheme
+
+bat cache --build && echo "--theme=BLACKHOLE" >> $(bat --config-file) && cd ~
 ```
 
 ### License
