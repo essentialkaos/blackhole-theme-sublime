@@ -28,7 +28,7 @@ contexts:
       captures:
         0: variable.other.spec
         1: variable.other.name.spec
-    - match: \%(?!(global|define|package|description|prep|setup|autosetup|conf|build|install|clean|pre|post|preun|postun|pretrans|posttrans|verify|triggerprein|triggerin|triggerun|triggerpostun|filetriggerin|filetriggerun|filetriggerpostun|transfiletriggerin|transfiletriggerun|transfiletriggerpostun|verify|interp|meta|files|defattr|doc|config|artifact|ghost|license|dir|readme|changelog))([a-zA-Z_0-9_-]+)
+    - match: \%(?!(global|define|package|description|prep|setup|autosetup|autopatch|conf|build|install|clean|pre|post|preun|postun|pretrans|posttrans|verify|triggerprein|triggerin|triggerun|triggerpostun|filetriggerin|filetriggerun|filetriggerpostun|transfiletriggerin|transfiletriggerun|transfiletriggerpostun|verify|interp|meta|files|defattr|doc|config|artifact|ghost|license|dir|readme|changelog))([a-zA-Z_0-9_-]+)
       captures:
         0: variable.other.spec
         1: variable.other.name.spec
