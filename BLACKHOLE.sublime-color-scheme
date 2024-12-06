@@ -335,10 +335,15 @@
       "scope": "markup.changed",
       "foreground": "var(diff_mod)"
     },
-        {
+    {
       "name": "JSON String",
-      "scope": "meta.structure.dictionary.json string.quoted.double.json",
+      "scope": "meta.string.json",
       "foreground": "var(string)"
+    },
+    {
+      "name": "JSON Key",
+      "scope": "source.json meta.sequence.json meta.mapping.key.json string.quoted.double.json",
+      "foreground": "var(entity)"
     },
     {
       "name": "YAML String",
