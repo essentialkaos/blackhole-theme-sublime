@@ -1,0 +1,27 @@
+<snippet>
+  <content><![CDATA[
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: hello
+              image: busybox
+              imagePullPolicy: IfNotPresent
+              command:
+                - /bin/sh
+                - -c
+                - date; echo Hello from the Kubernetes cluster
+          restartPolicy: OnFailure
+
+]]></content>
+  <tabTrigger>k8s.cronJob</tabTrigger>
+  <scope>source.yaml</scope>
+  <description>K8s CronJob</description>
+</snippet>

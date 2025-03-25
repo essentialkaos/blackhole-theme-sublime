@@ -1,0 +1,22 @@
+<snippet>
+  <content><![CDATA[
+apiVersion: v1
+kind: Pod
+metadata:
+  name: static-web
+  labels:
+    role: myrole
+spec:
+  containers:
+    - name: web
+      image: nginx
+      ports:
+        - name: web
+          containerPort: 80
+          protocol: TCP
+
+]]></content>
+  <tabTrigger>k8s.pod</tabTrigger>
+  <scope>source.yaml</scope>
+  <description>K8s Pod</description>
+</snippet>

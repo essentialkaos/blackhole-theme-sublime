@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: external-lb
+spec:
+  controller: example.com/ingress-controller
+  parameters:
+    apiGroup: k8s.example.com
+    kind: IngressParameters
+    name: external-lb
+
+]]></content>
+  <tabTrigger>k8s.ingressClass</tabTrigger>
+  <scope>source.yaml</scope>
+  <description>K8s Ingress Class</description>
+</snippet>

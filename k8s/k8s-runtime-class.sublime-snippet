@@ -1,0 +1,20 @@
+<snippet>
+  <content><![CDATA[
+apiVersion: node.k8s.io/v1
+kind: RuntimeClass
+metadata:
+  name: spot
+handler: runc
+scheduling:
+  nodeSelector:
+    eks.amazonaws.com/capacityType: "SPOT"
+  tolerations:
+    - key: eks.amazonaws.com/capacityType
+      value: SPOT
+      effect: NoSchedule
+
+]]></content>
+  <tabTrigger>k8s.runtimeClass</tabTrigger>
+  <scope>source.yaml</scope>
+  <description>K8s Runtime Class</description>
+</snippet>

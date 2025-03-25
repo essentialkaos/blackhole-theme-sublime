@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ${1:Name}
+data:
+  # property-like keys; each key maps to a simple value
+  ${2:param_name}: "${3:param_value}"
+
+]]></content>
+  <tabTrigger>k8s.configMap</tabTrigger>
+  <scope>source.yaml</scope>
+  <description>K8s ConfigMap</description>
+</snippet>

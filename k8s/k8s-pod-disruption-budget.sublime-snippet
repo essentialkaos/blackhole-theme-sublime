@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: nginx-pdb
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: nginx
+
+]]></content>
+  <tabTrigger>k8s.podDisruptionBudget</tabTrigger>
+  <scope>source.yaml</scope>
+  <description>K8s Pod Disruption Budget</description>
+</snippet>

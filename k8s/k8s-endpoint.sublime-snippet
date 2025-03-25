@@ -1,0 +1,25 @@
+<snippet>
+  <content><![CDATA[
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: node-exporter-6
+  namespace: app-metrics
+subsets:
+  - addresses:
+      - ip: 10.120.0.22
+        nodeName: app-desktop-kube
+        targetRef:
+          kind: Pod
+          namespace: app-metrics
+          name: node-exporter-x7b4j
+    ports:
+      - name: metrics
+        port: 9100
+        protocol: TCP
+
+]]></content>
+  <tabTrigger>k8s.endpoint</tabTrigger>
+  <scope>source.yaml</scope>
+  <description>K8s Endpoint</description>
+</snippet>

@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+apiVersion: coordination.k8s.io/v1
+kind: Lease
+metadata:
+  name: nginx-lease
+spec:
+  leaseDurationSeconds: 3600
+
+]]></content>
+  <tabTrigger>k8s.lease</tabTrigger>
+  <scope>source.yaml</scope>
+  <description>K8s Lease</description>
+</snippet>
