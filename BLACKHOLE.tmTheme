@@ -14,7 +14,7 @@
     <key>colorSpaceName</key>
     <string>sRGB</string>
     <key>uuid</key>
-    <string>44d7cfd1-1c43-4526-991b-fbd617100072</string>
+    <string>52d957e1-a46b-4c87-a3b4-66173c593d03</string>
     <key>settings</key>
     <array>
       <dict>
@@ -695,7 +695,7 @@
         <key>name</key>
         <string>JSON String</string>
         <key>scope</key>
-        <string>meta.structure.dictionary.json string.quoted.double.json</string>
+        <string>meta.string.json</string>
         <key>settings</key>
         <dict>
           <key>foreground</key>
@@ -704,13 +704,35 @@
       </dict>
       <dict>
         <key>name</key>
-        <string>YAML String</string>
+        <string>JSON Key</string>
         <key>scope</key>
-        <string>string.unquoted.yaml</string>
+        <string>source.json meta.sequence.json meta.mapping.key.json string.quoted.double.json</string>
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#D6BD0A</string>
+          <string>#7294AF</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>YAML String</string>
+        <key>scope</key>
+        <string>meta.string.yaml string.unquoted.plain.out.yaml</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#F3F3F3</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>YAML Key</string>
+        <key>scope</key>
+        <string>meta.mapping.key.yaml meta.string.yaml string.unquoted.plain.out.yaml</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#B7AE89</string>
         </dict>
       </dict>
       <dict>

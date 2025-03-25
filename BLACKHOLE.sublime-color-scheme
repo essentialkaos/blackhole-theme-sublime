@@ -347,8 +347,13 @@
     },
     {
       "name": "YAML String",
-      "scope": "string.unquoted.yaml",
-      "foreground": "var(string)"
+      "scope": "meta.string.yaml string.unquoted.plain.out.yaml",
+      "foreground": "#F3F3F3"
+    },
+    {
+      "name": "YAML Key",
+      "scope": "meta.mapping.key.yaml meta.string.yaml string.unquoted.plain.out.yaml",
+      "foreground": "#B7AE89"
     },
     {
       "name": "YAML Start/End",
