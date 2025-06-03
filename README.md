@@ -1,4 +1,4 @@
-## BLACKH⚫LE Theme for Sublime Text 3/4
+## 𝗕𝗟𝗔𝗖𝗞𝗛⬤𝗟𝗘 Theme for Sublime Text 3/4
 
 <p align="center"><a href="#readme"><img src=".github/images/card.jpg"/></a></p>
 
