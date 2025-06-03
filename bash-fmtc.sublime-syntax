@@ -8,11 +8,7 @@ version: 2
 extends: Packages/ShellScript/Bash.sublime-syntax
 
 contexts:
-  string-quoted-double-body:
-    - meta_append: true
-    - include: fmtc-tags
-
-  heredocs-body-common-with-expansion:
+  string-prototype:
     - meta_append: true
     - include: fmtc-tags
 
