@@ -489,6 +489,12 @@
       "font_style": "bold italic"
     },
     {
+      "name": "Ansible Assignment",
+      "scope": "keyword.operator.assignment.ansible",
+      "foreground": "#777",
+      "font_style": ""
+    },
+    {
       "name": "fmtc tag",
       "scope": "variable.other.fmtc.tag",
       "foreground": "#4E7982"
