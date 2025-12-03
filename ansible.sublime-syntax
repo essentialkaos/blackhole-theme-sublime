@@ -54,41 +54,41 @@ contexts:
       scope: keyword.other.ansible.condition
       captures:
         1: keyword.other.ansible.condition.name
-        2: keyword.operator.assignment
+        2: keyword.operator.assignment.ansible
       push: conditionals
     - match: '^[ \t]*(shell)(:)[ ]*'
       scope: keyword.other.ansible.action
       captures:
         1: keyword.other.ansible.action.name
-        2: keyword.operator.assignment
+        2: keyword.operator.assignment.ansible
     - match: '^[ \t]*(register)(:)[ ]*(.*)'
       scope: keyword.other.ansible.action
       captures:
         1: keyword.other.ansible.action.name
-        2: keyword.operator.assignment
+        2: keyword.operator.assignment.ansible
         3: storage.type.ansible
     - match: '(\-) (hosts)(:)'
       scope: keyword.other.ansible.hosts
       captures:
         1: punctuation.separator
         2: keyword.other.ansible.hosts.name
-        3: keyword.operator.assignment
+        3: keyword.operator.assignment.ansible
     - match: '(\-) (name)(:)\ +(.*)'
       scope: keyword.other.ansible.task
       captures:
         1: punctuation.separator
         2: keyword.other.ansible.task.name
-        3: keyword.operator.assignment
+        3: keyword.operator.assignment.ansible
         4: keyword.other.ansible.task.desc
     - match: '^[ \t]{2,}block(:)$'
       scope: keyword.other.ansible.block
       captures:
-        1: keyword.operator.assignment
+        1: keyword.operator.assignment.ansible
     - match: '^[ \t]*([\.\w\d_-]+)(:)'
       scope: keyword.other.ansible.action
       captures:
         1: keyword.other.ansible.action.name
-        2: keyword.operator.assignment
+        2: keyword.operator.assignment.ansible
 
   strings:
     - match: '(?<!\\)"'
