@@ -64,6 +64,11 @@
       "foreground": "#E4A942"
     },
     {
+      "name": "File mode",
+      "scope": "constant.numeric.mode",
+      "foreground": "#3DD3B0"
+    },
+    {
       "name": "Built-in constant",
       "scope": "constant.language",
       "foreground": "#E4A942"
@@ -463,19 +468,25 @@
       "name": "Ansible Task Description",
       "scope": "keyword.other.ansible.task.desc",
       "foreground": "#65B0D8",
-      "font_style": "bold"
+      "font_style": "italic"
     },
     {
       "name": "Ansible Block",
       "scope": "keyword.other.ansible.block",
       "foreground": "var(function)",
-      "font_style": "italic"
+      "font_style": "bold"
     },
     {
       "name": "Ansible Action Name",
-      "scope": "keyword.other.ansible.action.name",
+      "scope": "keyword.other.ansible.action.name, keyword.other.ansible.condition.name",
       "foreground": "#B7AE89",
       "font_style": ""
+    },
+    {
+      "name": "Ansible Function Name",
+      "scope": "keyword.other.ansible.function.name",
+      "foreground": "#72C4CC",
+      "font_style": "bold italic"
     },
     {
       "name": "fmtc tag",
