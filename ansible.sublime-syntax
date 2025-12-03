@@ -11,62 +11,91 @@ contexts:
   main:
     - include: comments
     - include: keywords
-    - include: jinja
+    - include: jinja-variable
     - include: strings
     - include: tasks
-    - include: conditionals
 
   comments:
-    - match: ^[\t ]*#
+    - match: '^[\t ]*#'
       scope: punctuation.definition.comment
       push:
         - meta_scope: comment.line
         - include: pop-on-line-end
-    - match: ^[\-]{3}
+    - match: '^[\-]{3}'
       scope: comment.line
 
   keywords:
-    - match: \b(true|false)\b
+    - match: '\b(true|false|yes|no)\b'
       scope: constant.language.boolean.yaml
+    - match: '\b0(\d){3}\b'
+      scope: constant.numeric.mode
     - match: '\b([0-9]+\.[0-9]*|\.[0-9]+)([eE][+-]?\d+)?\b'
       scope: constant.numeric.float
     - match: '\b\d+\b'
       scope: constant.numeric.integer
 
+  jinja-variable:
+    - match: '(\{\{ *[^\{\}]+ *\}\})|(\$\{[^\{\}]+\})'
+      scope: storage.type.ansible
+
+  conditionals:
+    - include: strings
+    - include: pop-on-line-end
+    - match: '\b(is|or|and|(or )?not|if|else|(((un)?defined)))\b'
+      scope: constant.character
+    - match: '([\w\d._]+)(?:\()'
+      captures:
+        1: keyword.other.ansible.function.name
+    - match: '([\w\d._]+)'
+      scope: storage.type.ansible
+
   tasks:
-    - match: (\-) (hosts)(:)
+    - match: '[ \t]{2,}(when|until)(:)[ ]*'
+      scope: keyword.other.ansible.condition
+      captures:
+        1: keyword.other.ansible.condition.name
+        2: keyword.operator.assignment
+      push: conditionals
+    - match: '^[ \t]*(shell)(:)[ ]*'
+      scope: keyword.other.ansible.action
+      captures:
+        1: keyword.other.ansible.action.name
+        2: keyword.operator.assignment
+    - match: '^[ \t]*(register)(:)[ ]*(.*)'
+      scope: keyword.other.ansible.action
+      captures:
+        1: keyword.other.ansible.action.name
+        2: keyword.operator.assignment
+        3: storage.type.ansible
+    - match: '(\-) (hosts)(:)'
       scope: keyword.other.ansible.hosts
       captures:
         1: punctuation.separator
         2: keyword.other.ansible.hosts.name
         3: keyword.operator.assignment
-    - match: (\-) (name)(:)\ +(.*)
+    - match: '(\-) (name)(:)\ +(.*)'
       scope: keyword.other.ansible.task
       captures:
         1: punctuation.separator
         2: keyword.other.ansible.task.name
         3: keyword.operator.assignment
         4: keyword.other.ansible.task.desc
-    - match: '[ \t]{2,}block(:)'
+    - match: '^[ \t]{2,}block(:)$'
       scope: keyword.other.ansible.block
       captures:
         1: keyword.operator.assignment
-    - match: '^[ \t]{0,}([\w\d_-]+)(:)'
+    - match: '^[ \t]*([\.\w\d_-]+)(:)'
       scope: keyword.other.ansible.action
       captures:
         1: keyword.other.ansible.action.name
         2: keyword.operator.assignment
 
-  conditionals:
-    - match: \b(is|or|and|(or )?not|if|else|(((un)?defined)))\b
-      scope: constant.character
-
   strings:
-    - match: '"'
+    - match: '(?<!\\)"'
       scope: punctuation.definition.string.begin
       push:
         - meta_scope: string.quoted.double
-        - match: '"'
+        - match: '(?<!\\)"'
           scope: punctuation.definition.string.end
           pop: true
         - include: jinja-variable
@@ -79,10 +108,6 @@ contexts:
           pop: true
         - include: jinja-variable
 
-  jinja-variable:
-    - match: (\{\{ *[^\{\}]+ *\}\})|(\$\{[^\{\}]+\})
-      scope: storage.type.ansible
-
   pop-on-line-end:
-    - match: $
+    - match: '$'
       pop: true
