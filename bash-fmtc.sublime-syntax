@@ -23,7 +23,7 @@ contexts:
         0: variable.other.fmtc.tag.reset
         1: variable.other.fmtc.tag.value
 
-    - match: '\{(([\-_*^~@&\+=]?)([drgybmcsDRGYBMCS])([\-_*^~@&\+=]?))\}'
+    - match: '\{(([\-_*^~@&\+=]*)([drgybmcsDRGYBMCS])([\-_*^~@&\+=]*))\}'
       captures: 
         0: variable.other.fmtc.tag.simple
         1: variable.other.fmtc.tag.value
