@@ -13,7 +13,7 @@
 Open `Terminal.app` and do:
 
 ```bash
-curl -OL# https://kaos.sh/blackhole-theme-sublime.tar.gz && \
+curl -OL# https://github.com/essentialkaos/blackhole-theme-sublime/archive/refs/heads/master.tar.gz -o blackhole-theme-sublime.tar.gz && \
   tar xzf blackhole-theme-sublime.tar.gz && \
   cp blackhole-theme-sublime-master/*.sublime-* "$HOME/Library/Application Support/Sublime Text/Packages/User/" && \
   cp blackhole-theme-sublime-master/*.tmPreferences "$HOME/Library/Application Support/Sublime Text/Packages/User/" && \
@@ -25,7 +25,7 @@ curl -OL# https://kaos.sh/blackhole-theme-sublime.tar.gz && \
 Press <kbd>Win</kbd>+<kbd>R</kbd>, type `powershell` and press Enter. Then do:
 
 ```powershell
-Invoke-WebRequest -Uri "https://kaos.sh/blackhole-theme-sublime.zip" -OutFile blackhole-theme-sublime.zip
+Invoke-WebRequest -Uri "https://github.com/essentialkaos/blackhole-theme-sublime/archive/refs/heads/master.zip" -OutFile blackhole-theme-sublime.zip
 Expand-Archive -LiteralPath blackhole-theme-sublime.zip -DestinationPath .
 Copy-Item -Path blackhole-theme-sublime-master\*.sublime-* -Destination "$HOME\AppData\Roaming\Sublime Text\Packages\User\"
 Copy-Item -Path blackhole-theme-sublime-master\*.tmPreferences -Destination "$HOME\AppData\Roaming\Sublime Text\Packages\User\"
@@ -37,15 +37,15 @@ Remove-Item blackhole-theme-sublime* -Recurse
 ```bash
 mkdir -p "$(bat --config-dir)/syntaxes" && cd "$(bat --config-dir)/syntaxes" && \
   curl -ZL --max-redirs 3 --parallel-max 5 --remote-name-all \
-  https://kaos.sh/blackhole-theme-sublime/bibop-recipe.sublime-syntax \
-  https://kaos.sh/blackhole-theme-sublime/knf.sublime-syntax \
-  https://kaos.sh/blackhole-theme-sublime/rpm-spec.sublime-syntax \
-  https://kaos.sh/blackhole-theme-sublime/ansible.sublime-syntax \
-  https://kaos.sh/blackhole-theme-sublime/rbdef.sublime-syntax
+  https://raw.githubusercontent.com/essentialkaos/blackhole-theme-sublime/refs/heads/master/bibop-recipe.sublime-syntax \
+  https://raw.githubusercontent.com/essentialkaos/blackhole-theme-sublime/refs/heads/master/knf.sublime-syntax \
+  https://raw.githubusercontent.com/essentialkaos/blackhole-theme-sublime/refs/heads/master/rpm-spec.sublime-syntax \
+  https://raw.githubusercontent.com/essentialkaos/blackhole-theme-sublime/refs/heads/master/ansible.sublime-syntax \
+  https://raw.githubusercontent.com/essentialkaos/blackhole-theme-sublime/refs/heads/master/rbdef.sublime-syntax
 
 mkdir -p "$(bat --config-dir)/themes" && cd "$(bat --config-dir)/themes" && \
   curl -ZL --max-redirs 3 --remote-name-all \
-  https://kaos.sh/blackhole-theme-sublime/BLACKHOLE.tmTheme
+  https://raw.githubusercontent.com/essentialkaos/blackhole-theme-sublime/refs/heads/master/BLACKHOLE.tmTheme
 
 bat cache --build && echo "--theme=BLACKHOLE" >> $(bat --config-file) && cd ~
 ```
